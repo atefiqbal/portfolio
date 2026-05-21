@@ -24,7 +24,7 @@
   /* NAV */
   nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 52px; }
   .nav-brand { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); text-decoration: none; }
-  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
   .nav-links a { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--copper); }
   @media (max-width: 700px) { .nav-links { display: none; } }
@@ -49,33 +49,43 @@
   .section-context { flex: 1 1 340px; max-width: 520px; font-size: 14px; color: #999; line-height: 1.75; padding-top: 28px; }
   .section-context strong { color: var(--cream); }
 
+  /* SUBSECTION LABEL */
+  .sub-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin: 48px 0 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
   /* MASONRY GRID */
-  .grid-masonry { columns: 3; column-gap: 16px; }
+  .grid-masonry { columns: 3; column-gap: 14px; }
   @media (max-width: 1100px) { .grid-masonry { columns: 2; } }
   @media (max-width: 600px) { .grid-masonry { columns: 1; } }
-  .grid-masonry .img-item { break-inside: avoid; margin-bottom: 16px; position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
+  .grid-masonry .img-item { break-inside: avoid; margin-bottom: 14px; position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
   .grid-masonry .img-item img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; }
   .grid-masonry .img-item:hover img { transform: scale(1.03); }
 
+  /* COMPACT GRID (for large ad series) */
+  .grid-compact { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+  @media (max-width: 600px) { .grid-compact { grid-template-columns: repeat(2, 1fr); } }
+  .grid-compact .img-item { position: relative; overflow: hidden; border-radius: 8px; background: var(--surface); cursor: pointer; aspect-ratio: 2/3; }
+  .grid-compact .img-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+  .grid-compact .img-item:hover img { transform: scale(1.05); }
+
   /* EVEN GRID */
-  .grid-even { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .grid-even { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
   .grid-even .img-item { position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
-  .grid-even .img-item img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .grid-even .img-item img { width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .grid-even .img-item:hover img { transform: scale(1.04); }
 
   /* FEATURED 2-COL */
-  .grid-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   @media (max-width: 800px) { .grid-featured { grid-template-columns: 1fr; } }
   .grid-featured .img-item { position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
-  .grid-featured .img-item img { width: 100%; height: auto; display: block; max-height: 600px; object-fit: cover; transition: transform 0.35s ease; }
+  .grid-featured .img-item img { width: 100%; height: auto; display: block; max-height: 540px; object-fit: cover; transition: transform 0.35s ease; }
   .grid-featured .img-item:hover img { transform: scale(1.03); }
 
   /* CAPTIONS */
-  .img-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 16px 14px; background: linear-gradient(transparent, rgba(0,0,0,0.78)); font-size: 12px; color: rgba(255,255,255,0.85); line-height: 1.45; opacity: 0; transition: opacity 0.3s; }
+  .img-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 14px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.78)); font-size: 11px; color: rgba(255,255,255,0.85); line-height: 1.45; opacity: 0; transition: opacity 0.3s; }
   .img-item:hover .img-caption { opacity: 1; }
 
   /* HOOK PILL */
-  .hook-pill { position: absolute; top: 12px; left: 12px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--copper); color: #fff; padding: 3px 8px; border-radius: 20px; z-index: 2; }
+  .hook-pill { position: absolute; top: 10px; left: 10px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--copper); color: #fff; padding: 3px 8px; border-radius: 20px; z-index: 2; }
 
   /* HOOKS LIST */
   .hooks-list { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 32px; }
@@ -116,6 +126,11 @@
   .md-angle-num { font-family: monospace; font-size: 8px; color: #D97757; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
   .md-angle-title { font-family: Georgia, serif; font-size: 10px; color: #141413; line-height: 1.4; }
 
+  /* PLACEHOLDER */
+  .placeholder-card { border: 2px dashed var(--border); border-radius: 14px; padding: 64px 40px; text-align: center; }
+  .placeholder-card .placeholder-icon { font-size: 40px; margin-bottom: 16px; opacity: 0.3; }
+  .placeholder-card p { font-size: 14px; color: var(--muted); }
+
   /* FOOTER */
   footer { border-top: 1px solid var(--border); padding: 48px 32px; max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
   footer .name { font-family: var(--serif); font-size: 18px; color: var(--white); }
@@ -140,9 +155,10 @@
 <nav>
   <a href="#top" class="nav-brand">Muhammad Atif</a>
   <ul class="nav-links">
-    <li><a href="#heartland">Heartland</a></li>
+    <li><a href="#restora">Restora</a></li>
     <li><a href="#yours">YOURS Wine</a></li>
-    <li><a href="#beauty">Beauty</a></li>
+    <li><a href="#heartland">Heartland</a></li>
+    <li><a href="#mip">MIP Sports</a></li>
     <li><a href="#approach">Method</a></li>
     <li><a href="#strategy">Strategy</a></li>
   </ul>
@@ -153,23 +169,354 @@
   <p class="hero-eyebrow">Creative Strategist · Paid Social · Content</p>
   <h1>The creative<br>that <em>converts</em></h1>
   <p class="hero-sub">
-    I build ad creative from the audience up — starting with the trigger event that sends someone searching at 11pm, not the product features that fill a spec sheet. Below is a cross-section of campaigns across pet, beverage, and beauty verticals.
+    I build ad creative from the audience up — starting with the trigger event that sends someone searching at 11pm, not the product features that fill a spec sheet. Below is a cross-section of campaigns across beauty, beverage, pet, and sports verticals.
   </p>
   <div class="stats">
-    <div class="stat-item"><div class="num">4+</div><div class="label">Brands</div></div>
-    <div class="stat-item"><div class="num">30+</div><div class="label">Live Creatives</div></div>
+    <div class="stat-item"><div class="num">5+</div><div class="label">Brands</div></div>
+    <div class="stat-item"><div class="num">150+</div><div class="label">Live Creatives</div></div>
     <div class="stat-item"><div class="num">Meta · TikTok</div><div class="label">Primary Channels</div></div>
     <div class="stat-item"><div class="num">TOF → BOF</div><div class="label">Full Funnel</div></div>
   </div>
 </section>
 
+<!-- ══════════════════════════════ -->
+<!-- 01 · RESTORA MAGNESIUM CREAM  -->
+<!-- ══════════════════════════════ -->
+<section id="restora" class="section-wrap">
+  <div class="section-header">
+    <div class="section-meta">
+      <div class="section-number">01 / Campaign</div>
+      <h2 class="section-title">Restora<br>Magnesium Cream</h2>
+      <span class="section-brand-tag">Beauty · Wellness · D2C</span>
+    </div>
+    <div class="section-context">
+      <p><strong>The brief:</strong> Night Reset Magnesium Cream — a topical sleep-and-recovery product in a market full of supplement noise. The challenge was differentiating through <strong>ritual, not ingredients</strong>.</p>
+      <p>Creative strategy centered on the bedtime routine as identity — positioning the cream not as a solution to a problem but as something worth looking forward to. Visual language: calm, intimate, aspirational without being aspirational-in-a-fake-way.</p>
+    </div>
+  </div>
+
+  <div class="grid-featured">
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Hero Visual</span>
+      <img src="images/restora-01.png" alt="Restora Magnesium Cream Hero">
+      <div class="img-caption">Hero product creative — premium night recovery positioning.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Lifestyle</span>
+      <img src="images/restora-02.png" alt="Restora Lifestyle">
+      <div class="img-caption">Lifestyle framing — ritual and recovery aesthetic.</div>
+    </div>
+  </div>
+
+  <div class="grid-masonry" style="margin-top: 14px;">
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product Focus</span>
+      <img src="images/restora-03.png" alt="Restora Product Shot">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Benefit Hook</span>
+      <img src="images/restora-04.png" alt="Restora Benefit Creative">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Concept</span>
+      <img src="images/restora-05.png" alt="Restora Concept Ad">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ -->
+<!-- 02 · YOURS NON-ALCOHOLIC WINE     -->
+<!-- ══════════════════════════════════ -->
+<section id="yours" class="section-wrap">
+  <div class="section-header">
+    <div class="section-meta">
+      <div class="section-number">02 / Campaign</div>
+      <h2 class="section-title">YOURS<br>Non-Alcoholic Wine</h2>
+      <span class="section-brand-tag">Beverage · DTC · Meta + Email</span>
+    </div>
+    <div class="section-context">
+      <p><strong>The brief:</strong> Premium NA wine brand built for the sober-curious consumer who misses the ritual, not the alcohol. Most NA brands lead with what you lose. We led with what you keep.</p>
+      <p>Creative strategy anchored on <strong>ritual identity</strong> — the glass on the counter, the slow pour, the "best part of the day" moment. Every hook was written to resonate with someone mid-transition, not someone already committed to sobriety.</p>
+    </div>
+  </div>
+
+  <!-- Subsection: Hero Concepts -->
+  <div class="sub-label">Hero Concepts — Named Ad Creatives</div>
+  <div class="grid-masonry">
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Email Hero</span>
+      <img src="images/yours-01-chardonnay-email.png" alt="Chardonnay Email Hero">
+      <div class="img-caption">Chardonnay email hero — warm summer framing, zero-proof positioning.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product</span>
+      <img src="images/yours-02-red-blend.png" alt="Red Blend">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product</span>
+      <img src="images/yours-03-sauv-blanc.png" alt="Sauvignon Blanc">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Lifestyle</span>
+      <img src="images/yours-04-lifestyle.png" alt="Lifestyle">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Lifestyle</span>
+      <img src="images/yours-05-lifestyle2.png" alt="Lifestyle 2">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product Range</span>
+      <img src="images/yours-06-rich-reds.png" alt="Rich Reds">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Email</span>
+      <img src="images/yours-07-chardonnay-email2.png" alt="Chardonnay Email 2">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Minimalist</span>
+      <img src="images/yours-08-one-bottle.png" alt="One Bottle">
+      <div class="img-caption">Single-bottle hero — "everything you need" visual language.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Controversy Hook</span>
+      <img src="images/yours-09-stop-calling.png" alt="Stop Calling This Wine">
+      <div class="img-caption">"Stop calling this wine" — controversy hook that reframes the category.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sensory Hook</span>
+      <img src="images/yours-10-no-finish.png" alt="No Finish">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Benefit</span>
+      <img src="images/yours-11-best-part.png" alt="Best Part">
+      <div class="img-caption">"The best part is the sober morning" — benefit-first, non-preachy.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Flavor Hook</span>
+      <img src="images/yours-12-sweetness.png" alt="Sweetness First">
+      <div class="img-caption">Sweetness-first framing — sensory language for skeptical wine drinkers.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Tone</span>
+      <img src="images/yours-13-set-quietly.png" alt="Set Quietly">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Ritual</span>
+      <img src="images/yours-14-ritual.png" alt="Ritual Not Regret">
+      <div class="img-caption">"Ritual, not regret" — identity-based positioning at its best.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Seasonal</span>
+      <img src="images/yours-15-fall-zero-proof.png" alt="Fall Zero Proof">
+      <div class="img-caption">Fall zero proof — seasonal hook for sober-curious audience.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Stat Hook</span>
+      <img src="images/yours-16-calories.png" alt="Under 20 Calories">
+      <div class="img-caption">Under 20 calories — hard number hook for health-conscious drinkers.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Character</span>
+      <img src="images/yours-17-bottle-char.png" alt="Bottle Character">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product</span>
+      <img src="images/yours-18-bottle2.png" alt="Bottle 2">
+    </div>
+  </div>
+
+  <!-- Subsection: May 2026 Campaign -->
+  <div class="sub-label">May 2026 Campaign — Fresh Concepts</div>
+  <div class="grid-compact">
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-01.png" alt="May 21 Creative 1"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-02.png" alt="May 21 Creative 2"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-03.png" alt="May 21 Creative 3"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-04.png" alt="May 21 Creative 4"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-05.png" alt="May 21 Creative 5"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-06.png" alt="May 21 Creative 6"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-07.png" alt="May 21 Creative 7"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-08.png" alt="May 21 Creative 8"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-09.png" alt="May 21 Creative 9"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-10.png" alt="May 21 Creative 10"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-11.png" alt="May 21 Creative 11"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-12.png" alt="May 21 Creative 12"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-13.png" alt="May 21 Creative 13"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-14.png" alt="May 21 Creative 14"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-15.png" alt="May 21 Creative 15"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-16.png" alt="May 21 Creative 16"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-17.png" alt="May 21 Creative 17"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-18.png" alt="May 21 Creative 18"></div>
+  </div>
+
+  <!-- Subsection: Mobile Ad Series -->
+  <div class="sub-label">Mobile Ad Series — 50-Creative Test Batch (May 2026)</div>
+  <div class="grid-compact">
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-01.png" alt="Mobile Ad 1"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-02.png" alt="Mobile Ad 2"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-03.png" alt="Mobile Ad 3"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-04.png" alt="Mobile Ad 4"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-05.png" alt="Mobile Ad 5"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-06.png" alt="Mobile Ad 6"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-07.png" alt="Mobile Ad 7"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-08.png" alt="Mobile Ad 8"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-09.png" alt="Mobile Ad 9"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-10.png" alt="Mobile Ad 10"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-11.png" alt="Mobile Ad 11"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-12.png" alt="Mobile Ad 12"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-13.png" alt="Mobile Ad 13"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-14.png" alt="Mobile Ad 14"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-15.png" alt="Mobile Ad 15"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-16.png" alt="Mobile Ad 16"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-17.png" alt="Mobile Ad 17"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-18.png" alt="Mobile Ad 18"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-19.png" alt="Mobile Ad 19"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-20.png" alt="Mobile Ad 20"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-21.png" alt="Mobile Ad 21"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-22.png" alt="Mobile Ad 22"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-23.png" alt="Mobile Ad 23"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-24.png" alt="Mobile Ad 24"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-25.png" alt="Mobile Ad 25"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-26.png" alt="Mobile Ad 26"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-27.png" alt="Mobile Ad 27"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-28.png" alt="Mobile Ad 28"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-29.png" alt="Mobile Ad 29"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-30.png" alt="Mobile Ad 30"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-31.png" alt="Mobile Ad 31"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-32.png" alt="Mobile Ad 32"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-33.png" alt="Mobile Ad 33"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-34.png" alt="Mobile Ad 34"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-35.png" alt="Mobile Ad 35"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-36.png" alt="Mobile Ad 36"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-37.png" alt="Mobile Ad 37"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-38.png" alt="Mobile Ad 38"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-39.png" alt="Mobile Ad 39"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-40.png" alt="Mobile Ad 40"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-41.png" alt="Mobile Ad 41"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-42.png" alt="Mobile Ad 42"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-43.png" alt="Mobile Ad 43"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-44.png" alt="Mobile Ad 44"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-45.png" alt="Mobile Ad 45"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-46.png" alt="Mobile Ad 46"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-47.png" alt="Mobile Ad 47"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-48.png" alt="Mobile Ad 48"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-49.png" alt="Mobile Ad 49"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-50.png" alt="Mobile Ad 50"></div>
+    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-51.png" alt="Chardonnay Without Morning-After"></div>
+  </div>
+
+  <!-- Subsection: Product Photography -->
+  <div class="sub-label">Product Photography — Sauvignon Blanc, Chardonnay, Red Blend</div>
+  <div class="grid-masonry">
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sauv Blanc</span>
+      <img src="images/yours-sauv-01.png" alt="Sauvignon Blanc 1">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sauv Blanc</span>
+      <img src="images/yours-sauv-02.png" alt="Sauvignon Blanc 2">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sauv Blanc</span>
+      <img src="images/yours-sauv-03.png" alt="Sauvignon Blanc 3">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sauv Blanc</span>
+      <img src="images/yours-sauv-04.png" alt="Sauvignon Blanc 4">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sauv Blanc</span>
+      <img src="images/yours-sauv-05.png" alt="Sauvignon Blanc 5">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sauv Blanc</span>
+      <img src="images/yours-sauv-06.png" alt="Sauvignon Blanc 6">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sauv Blanc</span>
+      <img src="images/yours-sauv-07.png" alt="Sauvignon Blanc 7">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sauv Blanc</span>
+      <img src="images/yours-sauv-08.png" alt="Sauvignon Blanc 8">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Sauv Blanc</span>
+      <img src="images/yours-sauv-09.png" alt="Sauvignon Blanc 9">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Chardonnay</span>
+      <img src="images/yours-char-01.png" alt="Chardonnay 1">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Chardonnay</span>
+      <img src="images/yours-char-02.png" alt="Chardonnay 2">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Chardonnay</span>
+      <img src="images/yours-char-03.png" alt="Chardonnay 3">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Chardonnay</span>
+      <img src="images/yours-char-04.png" alt="Chardonnay 4">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Chardonnay</span>
+      <img src="images/yours-char-05.png" alt="Chardonnay 5">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Chardonnay</span>
+      <img src="images/yours-char-06.png" alt="Chardonnay 6">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Chardonnay</span>
+      <img src="images/yours-char-07.png" alt="Chardonnay 7">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Chardonnay</span>
+      <img src="images/yours-char-08.png" alt="Chardonnay 8">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Red Blend</span>
+      <img src="images/yours-redbld-01.png" alt="Red Blend 1">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Red Blend</span>
+      <img src="images/yours-redbld-02.png" alt="Red Blend 2">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Red Blend</span>
+      <img src="images/yours-redbld-03.png" alt="Red Blend 3">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Red Blend</span>
+      <img src="images/yours-redbld-04.png" alt="Red Blend 4">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Red Blend</span>
+      <img src="images/yours-redbld-05.png" alt="Red Blend 5">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Red Blend</span>
+      <img src="images/yours-redbld-06.png" alt="Red Blend 6">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Red Blend</span>
+      <img src="images/yours-redbld-07.png" alt="Red Blend 7">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Red Blend</span>
+      <img src="images/yours-redbld-08.png" alt="Red Blend 8">
+    </div>
+  </div>
+</section>
+
 <!-- ══════════════════════════ -->
-<!-- 01 · HEARTLAND ANTLERS    -->
+<!-- 03 · HEARTLAND ANTLERS    -->
 <!-- ══════════════════════════ -->
 <section id="heartland" class="section-wrap">
   <div class="section-header">
     <div class="section-meta">
-      <div class="section-number">01 / Campaign</div>
+      <div class="section-number">03 / Campaign</div>
       <h2 class="section-title">Heartland<br>Antlers</h2>
       <span class="section-brand-tag">Pet · D2C · Meta + Email</span>
     </div>
@@ -179,264 +526,289 @@
     </div>
   </div>
 
+  <!-- Subsection: Ad Concepts -->
+  <div class="sub-label">Ad Concepts — Behavior-First Creative</div>
   <div class="grid-masonry">
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Email / Landing</span>
       <img src="images/heartland-12-can-dogs-chew.png" alt="Can Dogs Chew Antlers">
-      <div class="img-caption">Can Dogs Chew Antlers? — Full email/landing page creative. Education-first funnel entry.</div>
+      <div class="img-caption">Can Dogs Chew Antlers? — Education-first funnel entry.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Problem Hook</span>
       <img src="images/heartland-01-one-chew.png" alt="One chew, fewer interruptions">
-      <div class="img-caption">One chew, fewer interruptions — Functional benefit. Targets owners mid-workday.</div>
+      <div class="img-caption">One chew, fewer interruptions — Functional benefit for working owners.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Curiosity Hook</span>
       <img src="images/heartland-02-why-dog-watches.jpg" alt="Why your dog watches your work">
-      <div class="img-caption">Why your dog watches your work — Trigger-event copy. Hooks a working dog owner's identity.</div>
+      <div class="img-caption">Why your dog watches your work — Trigger-event copy.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Authority Hook</span>
-      <img src="images/heartland-04-before-you-buy.png" alt="Before you buy an antler">
-      <div class="img-caption">Before you buy an antler — Educational angle. Pre-empts first-time buyer objections.</div>
+      <img src="images/heartland-03-puppy-teeth.png" alt="Puppy Teeth">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Education</span>
+      <img src="images/heartland-04-before-you-buy.png" alt="Before You Buy">
+      <div class="img-caption">Before you buy an antler — pre-purchase education hook.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Transparency</span>
+      <img src="images/heartland-05-whats-in-chew.png" alt="What's in your dog's chew">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Objection</span>
+      <img src="images/heartland-06-dental-chews.png" alt="Dental chews don't clean teeth">
+      <div class="img-caption">Dental chews don't clean teeth — reframes the category.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Values Hook</span>
+      <img src="images/heartland-07-refuse-cheap.png" alt="Why we refuse to sell cheap">
+      <div class="img-caption">Why we refuse to sell cheap dog chews — brand values as ad copy.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Identity Hook</span>
-      <img src="images/heartland-08-give-dog-job.png" alt="Give your dog a job">
-      <div class="img-caption">Give your dog a job — Identity-based creative targeting working-breed owners.</div>
+      <img src="images/heartland-08-give-dog-job.png" alt="Give Your Dog a Job">
+      <div class="img-caption">Give your dog a job — working dog owner identity.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Contrarian</span>
-      <img src="images/heartland-06-dental-chews.png" alt="Dental chews don't clean teeth">
-      <div class="img-caption">Dental chews don't clean teeth — Pattern interrupt for pet owners in the category.</div>
+      <span class="hook-pill">Education</span>
+      <img src="images/heartland-09-brown-vs-white.png" alt="Brown vs White Antler">
+      <div class="img-caption">Brown vs. white antler — product comparison that builds trust.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product Shot</span>
+      <img src="images/heartland-10-marrow1.png" alt="Marrow Detail">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product Shot</span>
+      <img src="images/heartland-11-marrow2.png" alt="Marrow Detail 2">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Habits Hook</span>
+      <img src="images/heartland-13-harmless-habits.png" alt="5 Harmless Chew Habits">
+      <div class="img-caption">5 "harmless" chew habits to rethink — list-format hook.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Objection</span>
+      <img src="images/heartland-14-cheap-chews.png" alt="Cheap Chews Bad Habits">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Ad Concept</span>
+      <img src="images/heartland-15-chew-adv.png" alt="Chew Adv Concept">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product</span>
+      <img src="images/heartland-16-deer-antler-large.png" alt="Deer Antler Large">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Decision Aid</span>
+      <img src="images/heartland-17-deer-or-elk.png" alt="Deer or Elk">
+      <div class="img-caption">Deer or elk? Match the chew to your dog — buyer decision help.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Identity</span>
+      <img src="images/heartland-18-never-tired.png" alt="Never Tired">
+      <div class="img-caption">For dogs who never get tired — high-energy owner segment.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Reframe</span>
+      <img src="images/heartland-19-working-dog.png" alt="Working Dog">
+      <div class="img-caption">He's not a problem. He's a working dog with nothing to work on.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Hero</span>
+      <img src="images/heartland-20-main.png" alt="Main Hero">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Benefit</span>
+      <img src="images/heartland-21-keep-chewing.png" alt="Keep Chewing">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Benefit</span>
+      <img src="images/heartland-22-fewer-interruptions.png" alt="Fewer Interruptions">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Origin Story</span>
+      <img src="images/heartland-23-montana.png" alt="Montana Origin">
+      <div class="img-caption">Right now, somewhere in Montana... — brand origin story hook.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Emotion</span>
+      <img src="images/heartland-24-come-back.png" alt="Come Back">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Benefit</span>
+      <img src="images/heartland-25-every-dog-day.png" alt="Every Dog Day">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Boredom Hook</span>
+      <img src="images/heartland-26-dog-bored.png" alt="Dog Bored">
+      <div class="img-caption">This is what happens when a dog gets bored — problem hook.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Social Proof</span>
+      <img src="images/heartland-27-two-dogs.png" alt="Two Dogs">
+      <div class="img-caption">Two dogs. One antler each. The difference was immediate.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Identity</span>
+      <img src="images/heartland-28-needs-job.png" alt="Needs a Job">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Problem</span>
+      <img src="images/heartland-29-expensive-habit.png" alt="Expensive Habit">
+      <div class="img-caption">Your dog has an expensive habit — problem-agitate hook.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Data Hook</span>
+      <img src="images/heartland-30-chew-report.png" alt="Chew Report">
+      <div class="img-caption">Your Dog's Chew Report Is In — authority/data-driven hook.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Objection</span>
+      <img src="images/heartland-31-vet-said.png" alt="Vet Said No Antlers">
+      <div class="img-caption">Your vet said no antlers. Here's what they probably saw — objection handling.</div>
+    </div>
+  </div>
+
+  <!-- Subsection: Product Photography -->
+  <div class="sub-label">Product Photography</div>
+  <div class="grid-masonry">
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Lifestyle</span>
+      <img src="images/heartland-32-german-shepherd.jpg" alt="German Shepherd">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Lifestyle</span>
+      <img src="images/heartland-33-pit-bull.jpg" alt="Pit Bull">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product</span>
+      <img src="images/heartland-34-single-pack.jpg" alt="Single Pack">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Detail</span>
+      <img src="images/heartland-35-splinter-free.jpg" alt="Splinter Free">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Product</span>
+      <img src="images/heartland-36-devil-dog.jpg" alt="Devil Dog">
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Close-Up</span>
+      <img src="images/heartland-37-closeup.jpg" alt="Grade A Close-Up">
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Comparison</span>
-      <img src="images/heartland-09-brown-vs-white.png" alt="Brown vs white antler">
-      <div class="img-caption">Brown vs. white antler — Side-by-side education. Raises perceived buyer expertise.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Life-Stage</span>
-      <img src="images/heartland-03-puppy-teeth.png" alt="Puppy teeth are no joke">
-      <div class="img-caption">Puppy teeth are no joke — Life-stage targeting. New puppy owners at peak anxiety.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Ingredient</span>
-      <img src="images/heartland-05-whats-in-chew.png" alt="What's in your dog's chew right now">
-      <div class="img-caption">What's in your dog's chew right now? — Ingredient skeptic angle. Mirrors VOC language.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Brand Story</span>
-      <img src="images/heartland-07-refuse-cheap.png" alt="Why we refuse to sell cheap dog chews">
-      <div class="img-caption">Why we refuse to sell cheap dog chews — Brand values creative. Builds trust through transparency.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/heartland-10-marrow1.png" alt="Antler marrow product shot">
-      <div class="img-caption">Product creative — Antler marrow. Pinterest/lifestyle format.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/heartland-11-marrow2.png" alt="Antler marrow product shot 2">
-      <div class="img-caption">Product creative — Antler marrow variant. A/B visual test.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════ -->
-<!-- 02 · YOURS NON-ALCOHOLIC WINE -->
-<!-- ══════════════════════════════ -->
-<section id="yours" class="section-wrap">
-  <div class="section-header">
-    <div class="section-meta">
-      <div class="section-number">02 / Campaign</div>
-      <h2 class="section-title">YOURS<br>Non-Alcoholic Wine</h2>
-      <span class="section-brand-tag">Beverage · Lifestyle · Meta + Email</span>
-    </div>
-    <div class="section-context">
-      <p><strong>The brief:</strong> Premium NA wine brand fighting the "why bother" objection. The creative challenge: make alcohol-free wine feel like a choice you're <em>proud</em> of — not a compromise.</p>
-      <p>Strategy pivot: stop trying to out-wine wine. Position around the <strong>morning after</strong> — waking up sharp, keeping your plans, remembering your conversations. The alcohol-free angle becomes the premium, not the asterisk.</p>
-    </div>
-  </div>
-
-  <!-- Hero emotional ads -->
-  <div class="grid-featured" style="margin-bottom:16px">
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Emotional TOF</span>
-      <img src="images/yours-14-ritual.png" alt="Some days you just want the ritual not the regret">
-      <div class="img-caption">Some days, you just want the ritual, not the regret — Identity-first emotional hook.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Contrarian</span>
-      <img src="images/yours-09-stop-calling.png" alt="Stop calling this wine">
-      <div class="img-caption">Stop calling this wine — Dark, category-disrupting hook. Targets the skeptic persona.</div>
-    </div>
-  </div>
-
-  <!-- Full campaign grid -->
-  <div class="grid-masonry">
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Email Creative</span>
-      <img src="images/yours-07-chardonnay-email2.png" alt="Chardonnay without the morning-after">
-      <div class="img-caption">Chardonnay Without The Morning-After — Full email creative. Positions freedom as the premium.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Email Creative</span>
-      <img src="images/yours-01-chardonnay-email.png" alt="YOURS Chardonnay email">
-      <div class="img-caption">Chardonnay email variant — Full email with tasting notes and CTA.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Benefit Hook</span>
-      <img src="images/yours-16-calories.png" alt="Under 20 calories same ritual">
-      <div class="img-caption">Under 20 calories. Same ritual. — Comparison creative. Health-aware audience.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Seasonal</span>
-      <img src="images/yours-15-fall-zero-proof.png" alt="Fall's wine. Zero proof.">
-      <div class="img-caption">Fall's wine. Zero proof. — Seasonal product creative. Warm lifestyle aesthetic.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Multi-pack</span>
-      <img src="images/yours-08-one-bottle.png" alt="One bottle is not enough">
-      <div class="img-caption">One bottle is not enough — Bundle/multi-pack creative. Gifting and hosting angle.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Quality Hook</span>
-      <img src="images/yours-10-no-finish.png" alt="If it has no finish it feels pointless">
-      <div class="img-caption">If it has no finish, it feels pointless — Educates on what makes great NA wine different.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Lifestyle Grid</span>
-      <img src="images/yours-11-best-part.png" alt="The best part is tomorrow">
-      <div class="img-caption">The best part is tomorrow — 4-panel lifestyle creative. Morning-after positioning.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Mood Hook</span>
-      <img src="images/yours-12-sweetness.png" alt="Sweetness first">
-      <div class="img-caption">Sweetness first — Dark, editorial creative. Disrupts cheap-wine visual language.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Hosting Angle</span>
-      <img src="images/yours-13-set-quietly.png" alt="Set it quietly">
-      <div class="img-caption">Set it quietly — Host persona creative. Practical, confidence-forward messaging.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/yours-17-bottle-char.png" alt="YOURS Chardonnay bottle">
-      <div class="img-caption">YOURS Chardonnay — Product shot with tasting notes.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/yours-02-red-blend.png" alt="YOURS Red Blend">
-      <div class="img-caption">Red Blend — Product creative. Social/ad format.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/yours-03-sauv-blanc.png" alt="YOURS Sauvignon Blanc">
-      <div class="img-caption">Sauvignon Blanc — Product variant creative.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/yours-04-lifestyle.png" alt="YOURS lifestyle">
-      <div class="img-caption">Lifestyle creative — Feed format.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/yours-05-lifestyle2.png" alt="YOURS lifestyle 2">
-      <div class="img-caption">Lifestyle variant — A/B test creative.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/yours-06-rich-reds.png" alt="Rich reds crisp whites">
-      <div class="img-caption">Rich reds, crisp whites — Range announcement creative.</div>
+      <img src="images/heartland-38-comparison.jpg" alt="Product Comparison">
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════ -->
-<!-- 03 · BEAUTY               -->
+<!-- 04 · MIP SPORTS PRO       -->
+<!-- ══════════════════════════ -->
+<section id="mip" class="section-wrap">
+  <div class="section-header">
+    <div class="section-meta">
+      <div class="section-number">04 / Campaign</div>
+      <h2 class="section-title">MIP<br>Sports Pro</h2>
+      <span class="section-brand-tag">Sports · Performance · D2C</span>
+    </div>
+    <div class="section-context">
+      <p><strong>The brief:</strong> Performance sports brand — campaign creative built around athlete identity and the psychology of marginal gains. Audience: serious recreational athletes who train like professionals.</p>
+      <p>Creative strategy: lead with outcome identity ("this is who you become") rather than product specs. Assets pending upload — contact for full campaign breakdown.</p>
+    </div>
+  </div>
+  <div class="placeholder-card">
+    <div class="placeholder-icon">📲</div>
+    <p>Campaign assets available on request — contact atifghostwrites@gmail.com</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════ -->
+<!-- 05 · GLY MIRACLE BEAUTY   -->
 <!-- ══════════════════════════ -->
 <section id="beauty" class="section-wrap">
   <div class="section-header">
     <div class="section-meta">
-      <div class="section-number">03 / Campaign</div>
+      <div class="section-number">05 / Campaign</div>
       <h2 class="section-title">GLY Miracle<br>Beauty</h2>
-      <span class="section-brand-tag">Skincare · Premium · Visual Identity</span>
+      <span class="section-brand-tag">Beauty · Skincare · Meta</span>
     </div>
     <div class="section-context">
-      <p><strong>The brief:</strong> A premium skincare brand that needed creative to stand apart from the before/after and dermatologist authority lanes — both overcrowded.</p>
-      <p>Approach: GLY Miracle creative focuses on the <strong>bold, confident woman who already knows her skin</strong> — not the anxious shopper looking for a fix. Premium visual identity over ingredient anxiety.</p>
+      <p><strong>The brief:</strong> Skincare brand requiring creative that builds credibility without clinical jargon. Strategy centered on visual transformation and the "finally found something that works" emotional arc.</p>
     </div>
   </div>
-
   <div class="grid-featured">
     <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Hero Creative</span>
-      <img src="images/beauty-02-gly-miracle-portrait.png" alt="GLY Miracle bold portrait">
-      <div class="img-caption">GLY Miracle — Bold portrait creative. Confidence-first positioning, not anxiety-driven.</div>
+      <span class="hook-pill">Hero</span>
+      <img src="images/beauty-01-gly-miracle-main.png" alt="GLY Miracle Beauty Main">
     </div>
     <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/beauty-01-gly-miracle-main.png" alt="GLY Miracle main image">
-      <div class="img-caption">GLY Miracle — Main product image. Premium lifestyle aesthetic.</div>
+      <span class="hook-pill">Portrait</span>
+      <img src="images/beauty-02-gly-miracle-portrait.png" alt="GLY Miracle Beauty Portrait">
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════ -->
-<!-- 04 · METHOD               -->
+<!-- 06 · METHOD & HOOKS       -->
 <!-- ══════════════════════════ -->
 <section id="approach" class="section-wrap">
   <div class="section-header">
     <div class="section-meta">
-      <div class="section-number">04 / Method</div>
-      <h2 class="section-title">Hooks that<br>stop the scroll</h2>
+      <div class="section-number">06 / Method</div>
+      <h2 class="section-title">How I<br>Write Hooks</h2>
+      <span class="section-brand-tag">Framework · Process</span>
     </div>
     <div class="section-context">
-      <p>Every winning creative starts with the right first line. Here's a selection of hooks across brands and funnel stages — organized by hook type.</p>
+      <p>Every hook starts with the <strong>trigger event</strong> — the specific moment a person reaches for their phone and searches. Not the demographic. Not the product benefit. The moment.</p>
+      <p>Then I identify which of five hook types creates the most tension between where they are and where they want to be.</p>
     </div>
   </div>
 
   <div class="hooks-list">
     <div class="hook-row">
-      <div class="hook-type">Trigger Event</div>
-      <div class="hook-text">"Why does my dog chew through everything I own?"</div>
+      <div class="hook-type">Problem</div>
+      <div class="hook-text">"This is what happens when a dog gets bored."</div>
       <div class="hook-brand">Heartland</div>
     </div>
     <div class="hook-row">
-      <div class="hook-type">Contrarian</div>
-      <div class="hook-text">"Dental chews don't clean teeth. Let's talk."</div>
-      <div class="hook-brand">Heartland</div>
-    </div>
-    <div class="hook-row">
-      <div class="hook-type">Identity</div>
-      <div class="hook-text">"He's not a problem. He's a working dog with nothing to work on."</div>
-      <div class="hook-brand">Heartland</div>
-    </div>
-    <div class="hook-row">
-      <div class="hook-type">Benefit Flip</div>
-      <div class="hook-text">"Chardonnay without the morning-after."</div>
-      <div class="hook-brand">YOURS</div>
-    </div>
-    <div class="hook-row">
-      <div class="hook-type">Emotional</div>
-      <div class="hook-text">"Some days, you just want the ritual, not the regret."</div>
-      <div class="hook-brand">YOURS</div>
-    </div>
-    <div class="hook-row">
-      <div class="hook-type">Contrarian</div>
+      <div class="hook-type">Controversy</div>
       <div class="hook-text">"Stop calling this wine."</div>
       <div class="hook-brand">YOURS</div>
     </div>
     <div class="hook-row">
-      <div class="hook-type">Quality Hook</div>
-      <div class="hook-text">"If it has no finish, it feels pointless."</div>
-      <div class="hook-brand">YOURS</div>
-    </div>
-    <div class="hook-row">
-      <div class="hook-type">Benefit Hook</div>
-      <div class="hook-text">"Under 20 calories. Same ritual."</div>
-      <div class="hook-brand">YOURS</div>
-    </div>
-    <div class="hook-row">
-      <div class="hook-type">Comparison</div>
-      <div class="hook-text">"Brown vs. white antler — this is the one you want."</div>
+      <div class="hook-type">Reframe</div>
+      <div class="hook-text">"He's not a problem. He's a working dog with nothing to work on."</div>
       <div class="hook-brand">Heartland</div>
     </div>
     <div class="hook-row">
-      <div class="hook-type">Life-Stage</div>
-      <div class="hook-text">"Puppy teeth are no joke. Neither is everything they destroy."</div>
+      <div class="hook-type">Identity</div>
+      <div class="hook-text">"Ritual, not regret."</div>
+      <div class="hook-brand">YOURS</div>
+    </div>
+    <div class="hook-row">
+      <div class="hook-type">Data</div>
+      <div class="hook-text">"Your Dog's Chew Report Is In."</div>
+      <div class="hook-brand">Heartland</div>
+    </div>
+    <div class="hook-row">
+      <div class="hook-type">Objection</div>
+      <div class="hook-text">"Your vet said no antlers. Here's what they probably saw."</div>
+      <div class="hook-brand">Heartland</div>
+    </div>
+    <div class="hook-row">
+      <div class="hook-type">Stat</div>
+      <div class="hook-text">"Under 20 calories. Zero compromise."</div>
+      <div class="hook-brand">YOURS</div>
+    </div>
+    <div class="hook-row">
+      <div class="hook-type">Origin</div>
+      <div class="hook-text">"Right now, somewhere in Montana, an elk just dropped its antlers."</div>
       <div class="hook-brand">Heartland</div>
     </div>
   </div>
@@ -444,68 +816,70 @@
   <div class="approach-grid">
     <div class="approach-item">
       <div class="approach-num">Step 01</div>
-      <div class="approach-title">Saturation Scan</div>
-      <div class="approach-desc">Pull active competitor ads from Meta Ad Library. Find the lane 80% of competitors are crowding — then stay out of it.</div>
+      <div class="approach-title">Find the Trigger Event</div>
+      <div class="approach-desc">The specific moment — midnight search, frustrating product failure, sudden realization — that sends someone looking for a solution.</div>
     </div>
     <div class="approach-item">
       <div class="approach-num">Step 02</div>
-      <div class="approach-title">Trigger Mapping</div>
-      <div class="approach-desc">List the moments that make someone search your category at 11pm. Almost never "I want a product." Always a life event, a photo, a frustration.</div>
+      <div class="approach-title">Map Awareness Level</div>
+      <div class="approach-desc">Unaware → Problem-aware → Solution-aware → Product-aware. Hook type changes based on where the audience is in the journey.</div>
     </div>
     <div class="approach-item">
       <div class="approach-num">Step 03</div>
-      <div class="approach-title">White Space Test</div>
-      <div class="approach-desc">For every angle: would a media buyer at your top competitor recognize this? If yes — kill it. If no — brief it.</div>
+      <div class="approach-title">Test 5 Hook Types</div>
+      <div class="approach-desc">Problem, Curiosity, Reframe, Identity, Data. Each targets a different psychological lever. Always test all five before scaling.</div>
     </div>
     <div class="approach-item">
       <div class="approach-num">Step 04</div>
-      <div class="approach-title">Hook Variants</div>
-      <div class="approach-desc">Every concept ships with 3 hook variants — problem, curiosity, identity. The algorithm picks the winner. I pick the direction.</div>
+      <div class="approach-title">Scale the Winner</div>
+      <div class="approach-desc">One winning hook becomes a full creative suite — static, video, email, UGC brief — built around the same emotional core.</div>
     </div>
   </div>
 </section>
 
 <!-- ══════════════════════════ -->
-<!-- 05 · STRATEGY SAMPLE      -->
+<!-- 07 · STRATEGY SAMPLE      -->
 <!-- ══════════════════════════ -->
 <section id="strategy" class="section-wrap">
   <div class="section-header">
     <div class="section-meta">
-      <div class="section-number">05 / Sample Work</div>
-      <h2 class="section-title">Creative Strategy<br>in the Wild</h2>
+      <div class="section-number">07 / Strategy</div>
+      <h2 class="section-title">Strategy<br>Sample</h2>
+      <span class="section-brand-tag">Skynflow · Skin Brand</span>
     </div>
     <div class="section-context">
-      <p>This is what a pre-brief strategy document looks like before a single hook is written — audience scan, competitor white space, three angles, one full production-ready brief.</p>
+      <p>A full creative strategy document built speculatively for a skin brand — demonstrating how I approach brand positioning, angle development, and concept development from a blank brief.</p>
     </div>
   </div>
 
   <div class="strategy-card">
     <div class="strategy-card-body">
-      <div class="strategy-card-eyebrow">Skynflow · Sample Strategy Doc</div>
-      <h3>"I don't want to look younger. I want to look like myself."</h3>
-      <p>Three white-space angles for a 40+ skin brand — built from a competitor saturation scan, trigger event mapping, and audience language research. Includes <strong>Angles 01–03</strong> with hook variants and a full production brief for Angle 02, Concept 01.</p>
-      <a href="skynflow-strategy.html" target="_blank" class="btn">View Strategy Doc →</a>
+      <div class="strategy-card-eyebrow">Full Strategy Document</div>
+      <h3>Skynflow — 3-Angle Creative Strategy</h3>
+      <p>A complete breakdown of <strong>three distinct creative angles</strong> for a skin brand targeting women 40+: competitive positioning, audience psychology, hook development, and full concept briefs including storyboards.</p>
+      <a href="skynflow-strategy.html" class="btn">View Full Strategy →</a>
     </div>
     <div class="strategy-card-preview">
       <div class="mini-doc">
-        <div class="md-label">Skynflow · Creative Strategy</div>
-        <div class="md-title">Three angles + one full brief</div>
+        <div class="md-label">Strategy / Skynflow</div>
+        <div class="md-title">3-Angle Creative Brief</div>
         <div class="md-bar"></div>
         <div class="md-lines">
-          <div class="md-line"></div><div class="md-line short"></div>
-          <div class="md-line"></div><div class="md-line shorter"></div>
+          <div class="md-line"></div>
+          <div class="md-line short"></div>
+          <div class="md-line shorter"></div>
         </div>
         <div class="md-angle">
           <div class="md-angle-num">Angle 01</div>
-          <div class="md-angle-title">"I don't want to look younger. I want to look like myself."</div>
+          <div class="md-angle-title">"I don't want to look younger"</div>
         </div>
-        <div class="md-angle" style="margin-top:6px">
+        <div class="md-angle" style="margin-top:6px;">
           <div class="md-angle-num">Angle 02</div>
-          <div class="md-angle-title">"The mirror, the photo, the meeting."</div>
+          <div class="md-angle-title">The mirror, the photo, the meeting</div>
         </div>
-        <div class="md-angle" style="margin-top:6px">
+        <div class="md-angle" style="margin-top:6px;">
           <div class="md-angle-num">Angle 03</div>
-          <div class="md-angle-title">"What 40+ skin actually needs."</div>
+          <div class="md-angle-title">What 40+ skin actually needs</div>
         </div>
       </div>
     </div>
@@ -513,18 +887,14 @@
 </section>
 
 <footer>
-  <div>
-    <div class="name">Muhammad Atif</div>
-    <div class="cta-line">Creative Strategist · Available for Projects</div>
-  </div>
-  <div class="cta-line">
-    <a href="mailto:atifghostwrites@gmail.com">atifghostwrites@gmail.com</a>
-  </div>
+  <div class="name">Muhammad Atif</div>
+  <div class="cta-line">Creative Strategist · <a href="mailto:atifghostwrites@gmail.com">atifghostwrites@gmail.com</a></div>
 </footer>
 
 <script>
   function openLightbox(el) {
-    document.getElementById('lightbox-img').src = el.querySelector('img').src;
+    const img = el.querySelector('img');
+    document.getElementById('lightbox-img').src = img.src;
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -532,8 +902,12 @@
     document.getElementById('lightbox').classList.remove('open');
     document.body.style.overflow = '';
   }
-  document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
 </script>
 </body>
 </html>

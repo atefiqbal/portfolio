@@ -3,146 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Muhammad Atif — Creative Strategist Portfolio</title>
+<title>Muhammad Atif — Creative Strategist</title>
 <style>
-  :root {
-    --bg:      #0C0C0C;
-    --surface: #161616;
-    --border:  #2A2A2A;
-    --copper:  #D97757;
-    --cream:   #F5F2EC;
-    --muted:   #888;
-    --white:   #FFFFFF;
-    --serif:   ui-serif, Georgia, "Times New Roman", serif;
-    --sans:    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--cream); font-family: var(--sans); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+:root {
+  --bg:      #FAFAF7;
+  --surface: #F3F0E9;
+  --card:    #FFFFFF;
+  --border:  #E4E0D8;
+  --ink:     #1A1917;
+  --ink2:    #6B6760;
+  --accent:  #C45B1A;
+  --serif:   Georgia,"Times New Roman",serif;
+  --sans:    system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:    ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 
-  /* NAV */
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 52px; }
-  .nav-brand { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); text-decoration: none; }
-  .nav-links { display: flex; gap: 24px; list-style: none; }
-  .nav-links a { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--copper); }
-  @media (max-width: 700px) { .nav-links { display: none; } }
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:52px;}
+.nav-brand{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;font-weight:600;}
+.nav-links{display:flex;gap:22px;list-style:none;}
+.nav-links a{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
+@media(max-width:700px){.nav-links{display:none;}}
 
-  /* HERO */
-  .hero { max-width: 900px; margin: 0 auto; padding: 96px 32px 80px; }
-  .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 20px; }
-  .hero h1 { font-family: var(--serif); font-size: clamp(38px, 6vw, 64px); font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--white); margin-bottom: 28px; }
-  .hero h1 em { font-style: italic; color: var(--copper); }
-  .hero-sub { font-size: 17px; color: #aaa; max-width: 580px; line-height: 1.7; margin-bottom: 40px; }
-  .stats { display: flex; flex-wrap: wrap; gap: 40px; }
-  .stat-item .num { font-family: var(--serif); font-size: 36px; font-weight: 400; color: var(--white); line-height: 1; }
-  .stat-item .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+/* ── HERO ── */
+.hero{max-width:980px;margin:0 auto;padding:100px 32px 88px;}
+.hero-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.hero h1{font-family:var(--serif);font-size:clamp(40px,6vw,68px);font-weight:400;line-height:1.07;letter-spacing:-.02em;color:var(--ink);margin-bottom:28px;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero-sub{font-size:16px;color:var(--ink2);max-width:580px;line-height:1.75;margin-bottom:44px;}
+.stats{display:flex;flex-wrap:wrap;gap:40px;padding-top:28px;border-top:1px solid var(--border);}
+.stat-item .num{font-family:var(--serif);font-size:30px;font-weight:400;color:var(--ink);line-height:1;}
+.stat-item .label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-top:6px;}
 
-  /* SECTION */
-  .section-wrap { border-top: 1px solid var(--border); padding: 80px 32px; max-width: 1400px; margin: 0 auto; }
-  .section-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; margin-bottom: 48px; flex-wrap: wrap; }
-  .section-meta { flex: 0 0 auto; }
-  .section-number { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 8px; }
-  .section-title { font-family: var(--serif); font-size: clamp(28px, 4vw, 44px); font-weight: 400; color: var(--white); line-height: 1.15; margin-bottom: 8px; }
-  .section-brand-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--border); color: var(--muted); padding: 3px 10px; border-radius: 20px; }
-  .section-context { flex: 1 1 340px; max-width: 520px; font-size: 14px; color: #999; line-height: 1.75; padding-top: 28px; }
-  .section-context strong { color: var(--cream); }
+/* ── SECTIONS ── */
+.section-wrap{border-top:1px solid var(--border);padding:80px 32px;max-width:1440px;margin:0 auto;}
+.section-header{display:grid;grid-template-columns:260px 1fr;gap:48px;margin-bottom:52px;align-items:start;}
+@media(max-width:860px){.section-header{grid-template-columns:1fr;gap:20px;}}
+.section-number{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.section-title{font-family:var(--serif);font-size:clamp(30px,3.5vw,46px);font-weight:400;color:var(--ink);line-height:1.1;margin-bottom:12px;}
+.section-tag{display:inline-flex;font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;background:var(--surface);color:var(--ink2);padding:4px 10px;border-radius:20px;border:1px solid var(--border);}
+.section-context{font-size:14px;color:var(--ink2);line-height:1.8;}
+.section-context strong{color:var(--ink);}
+.section-context p+p{margin-top:12px;}
 
-  /* SUBSECTION LABEL */
-  .sub-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin: 48px 0 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+/* ── TABS ── */
+.tabs{display:flex;gap:0;flex-wrap:wrap;border-bottom:1px solid var(--border);margin-bottom:28px;}
+.tab-btn{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;background:none;border:none;padding:11px 18px 10px;cursor:pointer;color:var(--ink2);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s,border-color .15s;white-space:nowrap;}
+.tab-btn:hover{color:var(--ink);}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+.tab-count{font-size:9px;background:var(--surface);color:var(--ink2);padding:1px 5px;border-radius:8px;margin-left:5px;border:1px solid var(--border);}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
 
-  /* MASONRY GRID */
-  .grid-masonry { columns: 3; column-gap: 14px; }
-  @media (max-width: 1100px) { .grid-masonry { columns: 2; } }
-  @media (max-width: 600px) { .grid-masonry { columns: 1; } }
-  .grid-masonry .img-item { break-inside: avoid; margin-bottom: 14px; position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
-  .grid-masonry .img-item img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; }
-  .grid-masonry .img-item:hover img { transform: scale(1.03); }
+/* ── SUB-LABEL ── */
+.sub-label{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:36px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--border);}
 
-  /* COMPACT GRID (for large ad series) */
-  .grid-compact { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
-  @media (max-width: 600px) { .grid-compact { grid-template-columns: repeat(2, 1fr); } }
-  .grid-compact .img-item { position: relative; overflow: hidden; border-radius: 8px; background: var(--surface); cursor: pointer; aspect-ratio: 2/3; }
-  .grid-compact .img-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
-  .grid-compact .img-item:hover img { transform: scale(1.05); }
+/* ── IMAGE ITEMS (shared) ── */
+.img-item{position:relative;overflow:hidden;border-radius:10px;background:var(--surface);cursor:pointer;}
+.img-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
+.img-item:hover img{transform:scale(1.04);}
+.img-caption{position:absolute;bottom:0;left:0;right:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.72));font-size:11px;color:rgba(255,255,255,.92);line-height:1.45;opacity:0;transition:opacity .3s;}
+.img-item:hover .img-caption{opacity:1;}
+.hook-pill{position:absolute;top:9px;left:9px;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:3px 8px;border-radius:20px;z-index:2;}
 
-  /* EVEN GRID */
-  .grid-even { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
-  .grid-even .img-item { position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
-  .grid-even .img-item img { width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.4s ease; }
-  .grid-even .img-item:hover img { transform: scale(1.04); }
+/* ── GRID TYPES ── */
+/* Masonry — natural aspect ratios */
+.grid-masonry{columns:3;column-gap:12px;}
+@media(max-width:1100px){.grid-masonry{columns:2;}}
+@media(max-width:580px){.grid-masonry{columns:1;}}
+.grid-masonry .img-item{break-inside:avoid;margin-bottom:12px;}
+.grid-masonry .img-item img{height:auto;object-fit:initial;}
 
-  /* FEATURED 2-COL */
-  .grid-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  @media (max-width: 800px) { .grid-featured { grid-template-columns: 1fr; } }
-  .grid-featured .img-item { position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
-  .grid-featured .img-item img { width: 100%; height: auto; display: block; max-height: 540px; object-fit: cover; transition: transform 0.35s ease; }
-  .grid-featured .img-item:hover img { transform: scale(1.03); }
+/* Square grid — product photography */
+.grid-square{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.grid-square .img-item{aspect-ratio:1;}
 
-  /* CAPTIONS */
-  .img-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 14px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.78)); font-size: 11px; color: rgba(255,255,255,0.85); line-height: 1.45; opacity: 0; transition: opacity 0.3s; }
-  .img-item:hover .img-caption { opacity: 1; }
+/* Portrait grid — mobile ads, AI batch */
+.grid-compact{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;}
+@media(max-width:580px){.grid-compact{grid-template-columns:repeat(3,1fr);}}
+.grid-compact .img-item{aspect-ratio:2/3;}
 
-  /* HOOK PILL */
-  .hook-pill { position: absolute; top: 10px; left: 10px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--copper); color: #fff; padding: 3px 8px; border-radius: 20px; z-index: 2; }
+/* Tall grid — email format */
+.grid-tall{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;}
+.grid-tall .img-item{aspect-ratio:1/3;}
 
-  /* HOOKS LIST */
-  .hooks-list { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 32px; }
-  .hook-row { display: grid; grid-template-columns: 110px 1fr auto; gap: 24px; align-items: start; padding: 18px 24px; border-bottom: 1px solid var(--border); background: var(--surface); transition: background 0.2s; }
-  .hook-row:last-child { border-bottom: 0; }
-  .hook-row:hover { background: #1e1e1e; }
-  .hook-type { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); padding-top: 3px; }
-  .hook-text { font-family: var(--serif); font-size: 15px; color: var(--cream); line-height: 1.5; font-style: italic; }
-  .hook-brand { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; padding-top: 4px; }
+/* ── HOOKS ── */
+.hooks-list{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:32px;}
+.hook-row{display:grid;grid-template-columns:100px 1fr auto;gap:20px;align-items:start;padding:18px 24px;border-bottom:1px solid var(--border);background:var(--card);transition:background .15s;}
+.hook-row:last-child{border-bottom:none;}
+.hook-row:hover{background:var(--surface);}
+.hook-type{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);padding-top:3px;}
+.hook-text{font-family:var(--serif);font-size:15px;color:var(--ink);line-height:1.5;font-style:italic;}
+.hook-brand{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);white-space:nowrap;padding-top:4px;}
 
-  /* APPROACH GRID */
-  .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-top: 48px; }
-  .approach-item { background: var(--surface); padding: 32px 28px; }
-  .approach-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); margin-bottom: 12px; }
-  .approach-title { font-family: var(--serif); font-size: 17px; color: var(--white); margin-bottom: 8px; line-height: 1.3; }
-  .approach-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+/* ── APPROACH GRID ── */
+.approach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.approach-item{background:var(--card);padding:28px 24px;}
+.approach-num{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.approach-title{font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:8px;line-height:1.3;}
+.approach-desc{font-size:13px;color:var(--ink2);line-height:1.65;}
 
-  /* STRATEGY CARD */
-  .strategy-card { display: grid; grid-template-columns: 1fr 1fr; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-  @media (max-width: 800px) { .strategy-card { grid-template-columns: 1fr; } }
-  .strategy-card-body { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
-  .strategy-card-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
-  .strategy-card-body h3 { font-family: var(--serif); font-size: 28px; font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
-  .strategy-card-body p { font-size: 14px; color: #999; line-height: 1.75; margin-bottom: 28px; }
-  .strategy-card-body p strong { color: var(--cream); }
-  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--copper); text-decoration: none; border: 1px solid var(--copper); padding: 10px 20px; border-radius: 6px; width: fit-content; transition: background 0.2s, color 0.2s; }
-  .btn:hover { background: var(--copper); color: #fff; }
-  .strategy-card-preview { background: #1a1a1a; padding: 32px; display: flex; align-items: center; justify-content: center; border-left: 1px solid var(--border); }
-  .mini-doc { background: #FAF9F5; border-radius: 8px; width: 100%; max-width: 300px; padding: 22px 18px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); transform: rotate(-1deg); }
-  .md-label { font-family: monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 8px; }
-  .md-title { font-family: Georgia, serif; font-size: 13px; color: #141413; margin-bottom: 10px; line-height: 1.3; }
-  .md-bar { height: 3px; background: #D97757; border-radius: 2px; margin-bottom: 10px; }
-  .md-lines { display: flex; flex-direction: column; gap: 4px; }
-  .md-line { height: 5px; background: #E0DDD5; border-radius: 3px; }
-  .md-line.short { width: 65%; }
-  .md-line.shorter { width: 45%; }
-  .md-angle { margin-top: 10px; background: #F0EEE6; border-radius: 5px; padding: 7px 9px; }
-  .md-angle-num { font-family: monospace; font-size: 8px; color: #D97757; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
-  .md-angle-title { font-family: Georgia, serif; font-size: 10px; color: #141413; line-height: 1.4; }
+/* ── STRATEGY CARD ── */
+.strategy-card{display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
+@media(max-width:800px){.strategy-card{grid-template-columns:1fr;}}
+.strategy-card-body{padding:48px 40px;display:flex;flex-direction:column;justify-content:center;}
+.strategy-card-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+.strategy-card-body h3{font-family:var(--serif);font-size:26px;font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:14px;}
+.strategy-card-body p{font-size:14px;color:var(--ink2);line-height:1.75;margin-bottom:24px;}
+.strategy-card-body p strong{color:var(--ink);}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:10px 20px;border-radius:6px;width:fit-content;transition:background .2s,color .2s;}
+.btn:hover{background:var(--accent);color:#fff;}
+.strategy-card-preview{background:#F0EDE6;padding:32px;display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);}
+.mini-doc{background:#FAF9F5;border-radius:10px;width:100%;max-width:280px;padding:22px 18px;box-shadow:0 12px 40px rgba(26,25,23,.1);transform:rotate(-1deg);}
+.md-label{font-family:monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:8px;}
+.md-title{font-family:Georgia,serif;font-size:13px;color:#141413;margin-bottom:10px;line-height:1.3;}
+.md-bar{height:3px;background:var(--accent);border-radius:2px;margin-bottom:10px;}
+.md-lines{display:flex;flex-direction:column;gap:4px;}
+.md-line{height:5px;background:#E0DDD5;border-radius:3px;}
+.md-line.short{width:65%;}
+.md-line.shorter{width:45%;}
+.md-angle{margin-top:8px;background:#F0EEE6;border-radius:5px;padding:7px 9px;}
+.md-angle-num{font-family:monospace;font-size:8px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}
+.md-angle-title{font-family:Georgia,serif;font-size:10px;color:#141413;line-height:1.4;}
 
-  /* PLACEHOLDER */
-  .placeholder-card { border: 2px dashed var(--border); border-radius: 14px; padding: 64px 40px; text-align: center; }
-  .placeholder-card .placeholder-icon { font-size: 40px; margin-bottom: 16px; opacity: 0.3; }
-  .placeholder-card p { font-size: 14px; color: var(--muted); }
+/* ── PLACEHOLDER ── */
+.placeholder-card{border:2px dashed var(--border);border-radius:14px;padding:64px 40px;text-align:center;}
+.placeholder-card p{font-size:14px;color:var(--ink2);}
 
-  /* FOOTER */
-  footer { border-top: 1px solid var(--border); padding: 48px 32px; max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-  footer .name { font-family: var(--serif); font-size: 18px; color: var(--white); }
-  footer .cta-line { font-size: 13px; color: var(--muted); }
-  footer .cta-line a { color: var(--copper); text-decoration: none; }
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:48px 32px;max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+footer .name{font-family:var(--serif);font-size:18px;color:var(--ink);}
+footer .cta-line{font-size:13px;color:var(--ink2);}
+footer .cta-line a{color:var(--accent);text-decoration:none;}
 
-  /* LIGHTBOX */
-  #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 999; align-items: center; justify-content: center; padding: 32px; }
-  #lightbox.open { display: flex; }
-  #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 40px 100px rgba(0,0,0,0.6); }
-  #lightbox-close { position: absolute; top: 20px; right: 24px; font-size: 28px; color: #fff; cursor: pointer; background: none; border: none; opacity: 0.7; line-height: 1; }
-  #lightbox-close:hover { opacity: 1; }
+/* ── LIGHTBOX ── */
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:999;align-items:center;justify-content:center;padding:32px;}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;}
+#lightbox-close{position:absolute;top:20px;right:24px;font-size:28px;color:#fff;cursor:pointer;background:none;border:none;opacity:.7;line-height:1;}
+#lightbox-close:hover{opacity:1;}
 </style>
 </head>
 <body>
@@ -155,7 +158,7 @@
 <nav>
   <a href="#top" class="nav-brand">Muhammad Atif</a>
   <ul class="nav-links">
-    <li><a href="#restora">Doracome</a></li>
+    <li><a href="#doracome">Doracome</a></li>
     <li><a href="#yours">YOURS Wine</a></li>
     <li><a href="#heartland">Heartland</a></li>
     <li><a href="#mip">MIP Sports</a></li>
@@ -168,26 +171,24 @@
 <section id="top" class="hero">
   <p class="hero-eyebrow">Creative Strategist · Paid Social · Content</p>
   <h1>The creative<br>that <em>converts</em></h1>
-  <p class="hero-sub">
-    I build ad creative from the audience up — starting with the trigger event that sends someone searching at 11pm, not the product features that fill a spec sheet. Below is a cross-section of campaigns across beauty, beverage, pet, and sports verticals.
-  </p>
+  <p class="hero-sub">I build ad creative from the audience up — starting with the trigger event that sends someone searching at 11pm, not the product features that fill a spec sheet. A cross-section of campaigns across beauty, beverage, pet, and sports verticals.</p>
   <div class="stats">
     <div class="stat-item"><div class="num">5+</div><div class="label">Brands</div></div>
-    <div class="stat-item"><div class="num">150+</div><div class="label">Live Creatives</div></div>
+    <div class="stat-item"><div class="num">200+</div><div class="label">Live Creatives</div></div>
     <div class="stat-item"><div class="num">Meta · TikTok</div><div class="label">Primary Channels</div></div>
     <div class="stat-item"><div class="num">TOF → BOF</div><div class="label">Full Funnel</div></div>
   </div>
 </section>
 
-<!-- ══════════════════════════════ -->
-<!-- 01 · RESTORA MAGNESIUM CREAM  -->
-<!-- ══════════════════════════════ -->
-<section id="restora" class="section-wrap">
+<!-- ═══════════════════════════════════ -->
+<!-- 01 · DORACOME MAGNESIUM CREAM      -->
+<!-- ═══════════════════════════════════ -->
+<section id="doracome" class="section-wrap">
   <div class="section-header">
-    <div class="section-meta">
+    <div>
       <div class="section-number">01 / Campaign</div>
       <h2 class="section-title">Doracome<br>Magnesium Cream</h2>
-      <span class="section-brand-tag">Beauty · Wellness · Amazon · Meta</span>
+      <span class="section-tag">Beauty · Wellness · Amazon · Meta</span>
     </div>
     <div class="section-context">
       <p><strong>The brief:</strong> Doracome Magnesium Cream (Lavender + Vitamin E) — a topical body cream for targeted nighttime recovery. Positioned for people who stand all day, work out, or carry tension in their legs and shoulders.</p>
@@ -198,76 +199,76 @@
   <div class="grid-masonry">
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Hero Product</span>
-      <img src="images/doracome-01.png" alt="Doracome Magnesium Cream Hero">
+      <img src="images/doracome-01.png" alt="Doracome Hero" style="height:auto;object-fit:initial;">
       <div class="img-caption">Hero product shot — purple packaging, premium D2C aesthetic.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Why You'll Love It</span>
-      <img src="images/doracome-02.png" alt="Why You'll Love It">
+      <img src="images/doracome-02.png" alt="Why You'll Love It" style="height:auto;object-fit:initial;">
       <div class="img-caption">Benefits breakdown — nighttime ritual, lightweight feel, for legs, calves &amp; feet.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Benefit Hook</span>
-      <img src="images/doracome-03.png" alt="Targeted Bedtime Comfort">
+      <img src="images/doracome-03.png" alt="Bedtime Comfort" style="height:auto;object-fit:initial;">
       <div class="img-caption">Targeted Bedtime Comfort — use-case specific ad angle.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Feature</span>
-      <img src="images/doracome-04.png" alt="Lightweight Non-Greasy Feel">
+      <img src="images/doracome-04.png" alt="Non-Greasy" style="height:auto;object-fit:initial;">
       <div class="img-caption">Lightweight, Non-Greasy Feel — objection-handling creative.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">How to Use</span>
-      <img src="images/doracome-05.png" alt="How to Use">
+      <img src="images/doracome-05.png" alt="How to Use" style="height:auto;object-fit:initial;">
       <div class="img-caption">How to Use — step-by-step instructional ad.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Occasion Hook</span>
-      <img src="images/doracome-06.png" alt="After Workouts Long Days">
+      <img src="images/doracome-06.png" alt="After Workouts" style="height:auto;object-fit:initial;">
       <div class="img-caption">After Workouts &amp; Long Days — occasion-targeting for active users.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Formula</span>
-      <img src="images/doracome-07.png" alt="Simple Formula Highlights">
+      <img src="images/doracome-07.png" alt="Formula" style="height:auto;object-fit:initial;">
       <div class="img-caption">Simple Formula Highlights — ingredient credibility creative.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Ritual</span>
-      <img src="images/doracome-08.png" alt="Nighttime Wind-Down Ritual">
+      <img src="images/doracome-08.png" alt="Nighttime Ritual" style="height:auto;object-fit:initial;">
       <div class="img-caption">Nighttime Wind-Down Ritual — lifestyle identity hook.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Product</span>
-      <img src="images/doracome-09.png" alt="Doracome Product Jar">
+      <img src="images/doracome-09.png" alt="Product Jar" style="height:auto;object-fit:initial;">
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Ritual</span>
-      <img src="images/doracome-10.png" alt="Nighttime Ritual 2">
+      <img src="images/doracome-10.png" alt="Ritual 2" style="height:auto;object-fit:initial;">
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Formula</span>
-      <img src="images/doracome-11.png" alt="Formula Highlights 2">
+      <img src="images/doracome-11.png" alt="Formula 2" style="height:auto;object-fit:initial;">
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Lifestyle</span>
-      <img src="images/doracome-12.png" alt="Doracome Lifestyle">
+      <img src="images/doracome-12.png" alt="Lifestyle" style="height:auto;object-fit:initial;">
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Concept</span>
-      <img src="images/doracome-13.png" alt="Doracome Concept">
+      <img src="images/doracome-13.png" alt="Concept" style="height:auto;object-fit:initial;">
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════ -->
-<!-- 02 · YOURS NON-ALCOHOLIC WINE     -->
-<!-- ══════════════════════════════════ -->
+<!-- ═══════════════════════════════════ -->
+<!-- 02 · YOURS NON-ALCOHOLIC WINE      -->
+<!-- ═══════════════════════════════════ -->
 <section id="yours" class="section-wrap">
   <div class="section-header">
-    <div class="section-meta">
+    <div>
       <div class="section-number">02 / Campaign</div>
       <h2 class="section-title">YOURS<br>Non-Alcoholic Wine</h2>
-      <span class="section-brand-tag">Beverage · DTC · Meta + Email</span>
+      <span class="section-tag">Beverage · DTC · Meta + Email</span>
     </div>
     <div class="section-context">
       <p><strong>The brief:</strong> Premium NA wine brand built for the sober-curious consumer who misses the ritual, not the alcohol. Most NA brands lead with what you lose. We led with what you keep.</p>
@@ -275,272 +276,217 @@
     </div>
   </div>
 
-  <!-- Subsection: Product Photography -->
-  <div class="sub-label">Product Photography — Sauvignon Blanc, Chardonnay, Red Blend</div>
-  <div class="grid-masonry">
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sauv Blanc</span>
-      <img src="images/yours-sauv-01.png" alt="Sauvignon Blanc 1">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sauv Blanc</span>
-      <img src="images/yours-sauv-02.png" alt="Sauvignon Blanc 2">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sauv Blanc</span>
-      <img src="images/yours-sauv-03.png" alt="Sauvignon Blanc 3">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sauv Blanc</span>
-      <img src="images/yours-sauv-04.png" alt="Sauvignon Blanc 4">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sauv Blanc</span>
-      <img src="images/yours-sauv-05.png" alt="Sauvignon Blanc 5">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sauv Blanc</span>
-      <img src="images/yours-sauv-06.png" alt="Sauvignon Blanc 6">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sauv Blanc</span>
-      <img src="images/yours-sauv-07.png" alt="Sauvignon Blanc 7">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sauv Blanc</span>
-      <img src="images/yours-sauv-08.png" alt="Sauvignon Blanc 8">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sauv Blanc</span>
-      <img src="images/yours-sauv-09.png" alt="Sauvignon Blanc 9">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Chardonnay</span>
-      <img src="images/yours-char-01.png" alt="Chardonnay 1">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Chardonnay</span>
-      <img src="images/yours-char-02.png" alt="Chardonnay 2">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Chardonnay</span>
-      <img src="images/yours-char-03.png" alt="Chardonnay 3">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Chardonnay</span>
-      <img src="images/yours-char-04.png" alt="Chardonnay 4">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Chardonnay</span>
-      <img src="images/yours-char-05.png" alt="Chardonnay 5">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Chardonnay</span>
-      <img src="images/yours-char-06.png" alt="Chardonnay 6">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Chardonnay</span>
-      <img src="images/yours-char-07.png" alt="Chardonnay 7">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Chardonnay</span>
-      <img src="images/yours-char-08.png" alt="Chardonnay 8">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Red Blend</span>
-      <img src="images/yours-redbld-01.png" alt="Red Blend 1">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Red Blend</span>
-      <img src="images/yours-redbld-02.png" alt="Red Blend 2">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Red Blend</span>
-      <img src="images/yours-redbld-03.png" alt="Red Blend 3">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Red Blend</span>
-      <img src="images/yours-redbld-04.png" alt="Red Blend 4">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Red Blend</span>
-      <img src="images/yours-redbld-05.png" alt="Red Blend 5">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Red Blend</span>
-      <img src="images/yours-redbld-06.png" alt="Red Blend 6">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Red Blend</span>
-      <img src="images/yours-redbld-07.png" alt="Red Blend 7">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Red Blend</span>
-      <img src="images/yours-redbld-08.png" alt="Red Blend 8">
-    </div>
+  <div class="tabs" id="yours-tabs">
+    <button class="tab-btn active" onclick="showTab('yours','photography',this)">Product Photography <span class="tab-count">25</span></button>
+    <button class="tab-btn" onclick="showTab('yours','hero',this)">Hero Concepts <span class="tab-count">18</span></button>
+    <button class="tab-btn" onclick="showTab('yours','email',this)">Email Series <span class="tab-count">5</span></button>
+    <button class="tab-btn" onclick="showTab('yours','mobile',this)">Mobile Ads <span class="tab-count">51</span></button>
   </div>
-  <!-- Subsection: Hero Concepts -->
-  <div class="sub-label">Hero Concepts — Named Ad Creatives</div>
-  <div class="grid-masonry">
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Email Hero</span>
-      <img src="images/yours-01-chardonnay-email.png" alt="Chardonnay Email Hero">
-      <div class="img-caption">Chardonnay email hero — warm summer framing, zero-proof positioning.</div>
+
+  <!-- TAB: Product Photography -->
+  <div id="yours-photography" class="tab-panel active">
+    <div class="sub-label">Sauvignon Blanc</div>
+    <div class="grid-square">
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Sauv Blanc</span><img src="images/yours-sauv-01.png" alt="Sauv Blanc 1"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Sauv Blanc</span><img src="images/yours-sauv-02.png" alt="Sauv Blanc 2"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Sauv Blanc</span><img src="images/yours-sauv-03.png" alt="Sauv Blanc 3"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Sauv Blanc</span><img src="images/yours-sauv-04.png" alt="Sauv Blanc 4"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Sauv Blanc</span><img src="images/yours-sauv-05.png" alt="Sauv Blanc 5"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Sauv Blanc</span><img src="images/yours-sauv-06.png" alt="Sauv Blanc 6"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Sauv Blanc</span><img src="images/yours-sauv-07.png" alt="Sauv Blanc 7"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Sauv Blanc</span><img src="images/yours-sauv-08.png" alt="Sauv Blanc 8"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Sauv Blanc</span><img src="images/yours-sauv-09.png" alt="Sauv Blanc 9"></div>
     </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Product</span>
-      <img src="images/yours-02-red-blend.png" alt="Red Blend">
+    <div class="sub-label">Chardonnay</div>
+    <div class="grid-square">
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Chardonnay</span><img src="images/yours-char-01.png" alt="Chardonnay 1"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Chardonnay</span><img src="images/yours-char-02.png" alt="Chardonnay 2"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Chardonnay</span><img src="images/yours-char-03.png" alt="Chardonnay 3"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Chardonnay</span><img src="images/yours-char-04.png" alt="Chardonnay 4"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Chardonnay</span><img src="images/yours-char-05.png" alt="Chardonnay 5"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Chardonnay</span><img src="images/yours-char-06.png" alt="Chardonnay 6"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Chardonnay</span><img src="images/yours-char-07.png" alt="Chardonnay 7"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Chardonnay</span><img src="images/yours-char-08.png" alt="Chardonnay 8"></div>
     </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Product</span>
-      <img src="images/yours-03-sauv-blanc.png" alt="Sauvignon Blanc">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Lifestyle</span>
-      <img src="images/yours-04-lifestyle.png" alt="Lifestyle">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Lifestyle</span>
-      <img src="images/yours-05-lifestyle2.png" alt="Lifestyle 2">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Product Range</span>
-      <img src="images/yours-06-rich-reds.png" alt="Rich Reds">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Email</span>
-      <img src="images/yours-07-chardonnay-email2.png" alt="Chardonnay Email 2">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Minimalist</span>
-      <img src="images/yours-08-one-bottle.png" alt="One Bottle">
-      <div class="img-caption">Single-bottle hero — "everything you need" visual language.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Controversy Hook</span>
-      <img src="images/yours-09-stop-calling.png" alt="Stop Calling This Wine">
-      <div class="img-caption">"Stop calling this wine" — controversy hook that reframes the category.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Sensory Hook</span>
-      <img src="images/yours-10-no-finish.png" alt="No Finish">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Benefit</span>
-      <img src="images/yours-11-best-part.png" alt="Best Part">
-      <div class="img-caption">"The best part is the sober morning" — benefit-first, non-preachy.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Flavor Hook</span>
-      <img src="images/yours-12-sweetness.png" alt="Sweetness First">
-      <div class="img-caption">Sweetness-first framing — sensory language for skeptical wine drinkers.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Tone</span>
-      <img src="images/yours-13-set-quietly.png" alt="Set Quietly">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Ritual</span>
-      <img src="images/yours-14-ritual.png" alt="Ritual Not Regret">
-      <div class="img-caption">"Ritual, not regret" — identity-based positioning at its best.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Seasonal</span>
-      <img src="images/yours-15-fall-zero-proof.png" alt="Fall Zero Proof">
-      <div class="img-caption">Fall zero proof — seasonal hook for sober-curious audience.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Stat Hook</span>
-      <img src="images/yours-16-calories.png" alt="Under 20 Calories">
-      <div class="img-caption">Under 20 calories — hard number hook for health-conscious drinkers.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Character</span>
-      <img src="images/yours-17-bottle-char.png" alt="Bottle Character">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Product</span>
-      <img src="images/yours-18-bottle2.png" alt="Bottle 2">
+    <div class="sub-label">Red Blend</div>
+    <div class="grid-square">
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Red Blend</span><img src="images/yours-redbld-01.png" alt="Red Blend 1"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Red Blend</span><img src="images/yours-redbld-02.png" alt="Red Blend 2"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Red Blend</span><img src="images/yours-redbld-03.png" alt="Red Blend 3"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Red Blend</span><img src="images/yours-redbld-04.png" alt="Red Blend 4"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Red Blend</span><img src="images/yours-redbld-05.png" alt="Red Blend 5"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Red Blend</span><img src="images/yours-redbld-06.png" alt="Red Blend 6"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Red Blend</span><img src="images/yours-redbld-07.png" alt="Red Blend 7"></div>
+      <div class="img-item" onclick="openLightbox(this)"><span class="hook-pill">Red Blend</span><img src="images/yours-redbld-08.png" alt="Red Blend 8"></div>
     </div>
   </div>
 
-  <!-- Subsection: May 2026 Campaign -->
-  <div class="sub-label">May 2026 Campaign — Chardonnay Email Series</div>
-  <div class="grid-compact">
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-01.png" alt="What Makes This Chardonnay So Special 1"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-02.png" alt="What Makes This Chardonnay So Special 2"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-03.png" alt="What Makes This Chardonnay So Special 3"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-04.png" alt="What Makes This Chardonnay So Special 4"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-05.png" alt="What Makes This Chardonnay So Special 5"></div>
+  <!-- TAB: Hero Concepts -->
+  <div id="yours-hero" class="tab-panel">
+    <div class="grid-masonry">
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Email Hero</span>
+        <img src="images/yours-01-chardonnay-email.png" alt="Chardonnay Email" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Chardonnay email hero — warm summer framing, zero-proof positioning.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Product</span>
+        <img src="images/yours-02-red-blend.png" alt="Red Blend" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Product</span>
+        <img src="images/yours-03-sauv-blanc.png" alt="Sauvignon Blanc" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Lifestyle</span>
+        <img src="images/yours-04-lifestyle.png" alt="Lifestyle" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Lifestyle</span>
+        <img src="images/yours-05-lifestyle2.png" alt="Lifestyle 2" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Product Range</span>
+        <img src="images/yours-06-rich-reds.png" alt="Rich Reds" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Email</span>
+        <img src="images/yours-07-chardonnay-email2.png" alt="Chardonnay Email 2" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Minimalist</span>
+        <img src="images/yours-08-one-bottle.png" alt="One Bottle" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Single-bottle hero — "everything you need" visual language.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Controversy</span>
+        <img src="images/yours-09-stop-calling.png" alt="Stop Calling" style="height:auto;object-fit:initial;">
+        <div class="img-caption">"Stop calling this wine" — controversy hook that reframes the category.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Sensory Hook</span>
+        <img src="images/yours-10-no-finish.png" alt="No Finish" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Benefit</span>
+        <img src="images/yours-11-best-part.png" alt="Best Part" style="height:auto;object-fit:initial;">
+        <div class="img-caption">"The best part is the sober morning" — benefit-first, non-preachy.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Flavor Hook</span>
+        <img src="images/yours-12-sweetness.png" alt="Sweetness" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Sweetness-first framing — sensory language for skeptical wine drinkers.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Tone</span>
+        <img src="images/yours-13-set-quietly.png" alt="Set Quietly" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Ritual</span>
+        <img src="images/yours-14-ritual.png" alt="Ritual" style="height:auto;object-fit:initial;">
+        <div class="img-caption">"Ritual, not regret" — identity-based positioning at its best.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Seasonal</span>
+        <img src="images/yours-15-fall-zero-proof.png" alt="Fall Zero Proof" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Fall zero proof — seasonal hook for sober-curious audience.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Stat Hook</span>
+        <img src="images/yours-16-calories.png" alt="Calories" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Under 20 calories — hard number hook for health-conscious drinkers.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Character</span>
+        <img src="images/yours-17-bottle-char.png" alt="Bottle Character" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Product</span>
+        <img src="images/yours-18-bottle2.png" alt="Bottle 2" style="height:auto;object-fit:initial;">
+      </div>
+    </div>
   </div>
 
-  <!-- Subsection: Mobile Ad Series -->
-  <div class="sub-label">Mobile Ad Series — 50-Creative Test Batch (May 2026)</div>
-  <div class="grid-compact">
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-01.png" alt="Mobile Ad 1"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-02.png" alt="Mobile Ad 2"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-03.png" alt="Mobile Ad 3"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-04.png" alt="Mobile Ad 4"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-05.png" alt="Mobile Ad 5"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-06.png" alt="Mobile Ad 6"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-07.png" alt="Mobile Ad 7"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-08.png" alt="Mobile Ad 8"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-09.png" alt="Mobile Ad 9"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-10.png" alt="Mobile Ad 10"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-11.png" alt="Mobile Ad 11"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-12.png" alt="Mobile Ad 12"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-13.png" alt="Mobile Ad 13"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-14.png" alt="Mobile Ad 14"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-15.png" alt="Mobile Ad 15"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-16.png" alt="Mobile Ad 16"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-17.png" alt="Mobile Ad 17"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-18.png" alt="Mobile Ad 18"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-19.png" alt="Mobile Ad 19"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-20.png" alt="Mobile Ad 20"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-21.png" alt="Mobile Ad 21"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-22.png" alt="Mobile Ad 22"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-23.png" alt="Mobile Ad 23"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-24.png" alt="Mobile Ad 24"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-25.png" alt="Mobile Ad 25"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-26.png" alt="Mobile Ad 26"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-27.png" alt="Mobile Ad 27"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-28.png" alt="Mobile Ad 28"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-29.png" alt="Mobile Ad 29"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-30.png" alt="Mobile Ad 30"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-31.png" alt="Mobile Ad 31"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-32.png" alt="Mobile Ad 32"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-33.png" alt="Mobile Ad 33"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-34.png" alt="Mobile Ad 34"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-35.png" alt="Mobile Ad 35"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-36.png" alt="Mobile Ad 36"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-37.png" alt="Mobile Ad 37"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-38.png" alt="Mobile Ad 38"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-39.png" alt="Mobile Ad 39"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-40.png" alt="Mobile Ad 40"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-41.png" alt="Mobile Ad 41"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-42.png" alt="Mobile Ad 42"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-43.png" alt="Mobile Ad 43"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-44.png" alt="Mobile Ad 44"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-45.png" alt="Mobile Ad 45"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-46.png" alt="Mobile Ad 46"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-47.png" alt="Mobile Ad 47"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-48.png" alt="Mobile Ad 48"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-49.png" alt="Mobile Ad 49"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-50.png" alt="Mobile Ad 50"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-51.png" alt="Chardonnay Without Morning-After"></div>
+  <!-- TAB: Email Series -->
+  <div id="yours-email" class="tab-panel">
+    <div class="sub-label">May 2026 — Chardonnay Email Series</div>
+    <div class="grid-tall">
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-01.png" alt="Email 1"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-02.png" alt="Email 2"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-03.png" alt="Email 3"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-04.png" alt="Email 4"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m21-05.png" alt="Email 5"></div>
+    </div>
   </div>
 
+  <!-- TAB: Mobile Ads -->
+  <div id="yours-mobile" class="tab-panel">
+    <div class="sub-label">50-Creative Mobile Ad Test Batch — May 2026</div>
+    <div class="grid-compact">
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-01.png" alt="Mobile 1"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-02.png" alt="Mobile 2"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-03.png" alt="Mobile 3"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-04.png" alt="Mobile 4"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-05.png" alt="Mobile 5"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-06.png" alt="Mobile 6"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-07.png" alt="Mobile 7"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-08.png" alt="Mobile 8"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-09.png" alt="Mobile 9"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-10.png" alt="Mobile 10"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-11.png" alt="Mobile 11"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-12.png" alt="Mobile 12"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-13.png" alt="Mobile 13"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-14.png" alt="Mobile 14"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-15.png" alt="Mobile 15"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-16.png" alt="Mobile 16"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-17.png" alt="Mobile 17"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-18.png" alt="Mobile 18"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-19.png" alt="Mobile 19"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-20.png" alt="Mobile 20"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-21.png" alt="Mobile 21"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-22.png" alt="Mobile 22"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-23.png" alt="Mobile 23"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-24.png" alt="Mobile 24"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-25.png" alt="Mobile 25"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-26.png" alt="Mobile 26"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-27.png" alt="Mobile 27"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-28.png" alt="Mobile 28"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-29.png" alt="Mobile 29"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-30.png" alt="Mobile 30"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-31.png" alt="Mobile 31"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-32.png" alt="Mobile 32"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-33.png" alt="Mobile 33"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-34.png" alt="Mobile 34"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-35.png" alt="Mobile 35"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-36.png" alt="Mobile 36"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-37.png" alt="Mobile 37"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-38.png" alt="Mobile 38"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-39.png" alt="Mobile 39"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-40.png" alt="Mobile 40"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-41.png" alt="Mobile 41"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-42.png" alt="Mobile 42"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-43.png" alt="Mobile 43"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-44.png" alt="Mobile 44"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-45.png" alt="Mobile 45"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-46.png" alt="Mobile 46"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-47.png" alt="Mobile 47"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-48.png" alt="Mobile 48"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-49.png" alt="Mobile 49"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-50.png" alt="Mobile 50"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/yours-m15-51.png" alt="Mobile 51"></div>
+    </div>
+  </div>
 </section>
 
-<!-- ══════════════════════════ -->
-<!-- 03 · HEARTLAND ANTLERS    -->
-<!-- ══════════════════════════ -->
+<!-- ═══════════════════════════════════ -->
+<!-- 03 · HEARTLAND ANTLERS             -->
+<!-- ═══════════════════════════════════ -->
 <section id="heartland" class="section-wrap">
   <div class="section-header">
-    <div class="section-meta">
+    <div>
       <div class="section-number">03 / Campaign</div>
       <h2 class="section-title">Heartland<br>Antlers</h2>
-      <span class="section-brand-tag">Pet · D2C · Meta + Email</span>
+      <span class="section-tag">Pet · D2C · Meta + Email</span>
     </div>
     <div class="section-context">
       <p><strong>The brief:</strong> Premium elk/deer antler chew brand in a crowded pet market dominated by cheap rawhide and vague "natural" claims. Most competitors lead with ingredients. We led with <strong>behavior</strong>.</p>
@@ -548,218 +494,225 @@
     </div>
   </div>
 
-  <!-- Subsection: Ad Concepts -->
-  <div class="sub-label">Ad Concepts — Behavior-First Creative</div>
-  <div class="grid-masonry">
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Email / Landing</span>
-      <img src="images/heartland-12-can-dogs-chew.png" alt="Can Dogs Chew Antlers">
-      <div class="img-caption">Can Dogs Chew Antlers? — Education-first funnel entry.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Problem Hook</span>
-      <img src="images/heartland-01-one-chew.png" alt="One chew, fewer interruptions">
-      <div class="img-caption">One chew, fewer interruptions — Functional benefit for working owners.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Curiosity Hook</span>
-      <img src="images/heartland-02-why-dog-watches.jpg" alt="Why your dog watches your work">
-      <div class="img-caption">Why your dog watches your work — Trigger-event copy.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Authority Hook</span>
-      <img src="images/heartland-03-puppy-teeth.png" alt="Puppy Teeth">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Education</span>
-      <img src="images/heartland-04-before-you-buy.png" alt="Before You Buy">
-      <div class="img-caption">Before you buy an antler — pre-purchase education hook.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Transparency</span>
-      <img src="images/heartland-05-whats-in-chew.png" alt="What's in your dog's chew">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Objection</span>
-      <img src="images/heartland-06-dental-chews.png" alt="Dental chews don't clean teeth">
-      <div class="img-caption">Dental chews don't clean teeth — reframes the category.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Values Hook</span>
-      <img src="images/heartland-07-refuse-cheap.png" alt="Why we refuse to sell cheap">
-      <div class="img-caption">Why we refuse to sell cheap dog chews — brand values as ad copy.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Identity Hook</span>
-      <img src="images/heartland-08-give-dog-job.png" alt="Give Your Dog a Job">
-      <div class="img-caption">Give your dog a job — working dog owner identity.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Education</span>
-      <img src="images/heartland-09-brown-vs-white.png" alt="Brown vs White Antler">
-      <div class="img-caption">Brown vs. white antler — product comparison that builds trust.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Product Shot</span>
-      <img src="images/heartland-10-marrow1.png" alt="Marrow Detail">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Product Shot</span>
-      <img src="images/heartland-11-marrow2.png" alt="Marrow Detail 2">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Habits Hook</span>
-      <img src="images/heartland-13-harmless-habits.png" alt="5 Harmless Chew Habits">
-      <div class="img-caption">5 "harmless" chew habits to rethink — list-format hook.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Objection</span>
-      <img src="images/heartland-14-cheap-chews.png" alt="Cheap Chews Bad Habits">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Ad Concept</span>
-      <img src="images/heartland-15-chew-adv.png" alt="Chew Adv Concept">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Product</span>
-      <img src="images/heartland-16-deer-antler-large.png" alt="Deer Antler Large">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Decision Aid</span>
-      <img src="images/heartland-17-deer-or-elk.png" alt="Deer or Elk">
-      <div class="img-caption">Deer or elk? Match the chew to your dog — buyer decision help.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Identity</span>
-      <img src="images/heartland-18-never-tired.png" alt="Never Tired">
-      <div class="img-caption">For dogs who never get tired — high-energy owner segment.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Reframe</span>
-      <img src="images/heartland-19-working-dog.png" alt="Working Dog">
-      <div class="img-caption">He's not a problem. He's a working dog with nothing to work on.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Hero</span>
-      <img src="images/heartland-20-main.png" alt="Main Hero">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Benefit</span>
-      <img src="images/heartland-21-keep-chewing.png" alt="Keep Chewing">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Benefit</span>
-      <img src="images/heartland-22-fewer-interruptions.png" alt="Fewer Interruptions">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Origin Story</span>
-      <img src="images/heartland-23-montana.png" alt="Montana Origin">
-      <div class="img-caption">Right now, somewhere in Montana... — brand origin story hook.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Emotion</span>
-      <img src="images/heartland-24-come-back.png" alt="Come Back">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Benefit</span>
-      <img src="images/heartland-25-every-dog-day.png" alt="Every Dog Day">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Boredom Hook</span>
-      <img src="images/heartland-26-dog-bored.png" alt="Dog Bored">
-      <div class="img-caption">This is what happens when a dog gets bored — problem hook.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Social Proof</span>
-      <img src="images/heartland-27-two-dogs.png" alt="Two Dogs">
-      <div class="img-caption">Two dogs. One antler each. The difference was immediate.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Identity</span>
-      <img src="images/heartland-28-needs-job.png" alt="Needs a Job">
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Problem</span>
-      <img src="images/heartland-29-expensive-habit.png" alt="Expensive Habit">
-      <div class="img-caption">Your dog has an expensive habit — problem-agitate hook.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Data Hook</span>
-      <img src="images/heartland-30-chew-report.png" alt="Chew Report">
-      <div class="img-caption">Your Dog's Chew Report Is In — authority/data-driven hook.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Objection</span>
-      <img src="images/heartland-31-vet-said.png" alt="Vet Said No Antlers">
-      <div class="img-caption">Your vet said no antlers. Here's what they probably saw — objection handling.</div>
+  <div class="tabs" id="heartland-tabs">
+    <button class="tab-btn active" onclick="showTab('heartland','concepts',this)">Behavior-First Creative <span class="tab-count">31</span></button>
+    <button class="tab-btn" onclick="showTab('heartland','ai',this)">AI Ad Batch — May 2026 <span class="tab-count">49</span></button>
+  </div>
+
+  <!-- TAB: Behavior-First Creative -->
+  <div id="heartland-concepts" class="tab-panel active">
+    <div class="grid-masonry">
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Email / Landing</span>
+        <img src="images/heartland-12-can-dogs-chew.png" alt="Can Dogs Chew Antlers" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Can Dogs Chew Antlers? — Education-first funnel entry.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Problem Hook</span>
+        <img src="images/heartland-01-one-chew.png" alt="One Chew" style="height:auto;object-fit:initial;">
+        <div class="img-caption">One chew, fewer interruptions — Functional benefit for working owners.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Curiosity Hook</span>
+        <img src="images/heartland-02-why-dog-watches.jpg" alt="Why Dog Watches" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Why your dog watches your work — Trigger-event copy.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Authority Hook</span>
+        <img src="images/heartland-03-puppy-teeth.png" alt="Puppy Teeth" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Education</span>
+        <img src="images/heartland-04-before-you-buy.png" alt="Before You Buy" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Before you buy an antler — pre-purchase education hook.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Transparency</span>
+        <img src="images/heartland-05-whats-in-chew.png" alt="Whats In Chew" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Objection</span>
+        <img src="images/heartland-06-dental-chews.png" alt="Dental Chews" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Dental chews don't clean teeth — reframes the category.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Values Hook</span>
+        <img src="images/heartland-07-refuse-cheap.png" alt="Refuse Cheap" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Why we refuse to sell cheap dog chews — brand values as ad copy.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Identity Hook</span>
+        <img src="images/heartland-08-give-dog-job.png" alt="Give Dog Job" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Give your dog a job — working dog owner identity.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Education</span>
+        <img src="images/heartland-09-brown-vs-white.png" alt="Brown vs White" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Brown vs. white antler — product comparison that builds trust.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Product Shot</span>
+        <img src="images/heartland-10-marrow1.png" alt="Marrow 1" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Product Shot</span>
+        <img src="images/heartland-11-marrow2.png" alt="Marrow 2" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Habits Hook</span>
+        <img src="images/heartland-13-harmless-habits.png" alt="Harmless Habits" style="height:auto;object-fit:initial;">
+        <div class="img-caption">5 "harmless" chew habits to rethink — list-format hook.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Objection</span>
+        <img src="images/heartland-14-cheap-chews.png" alt="Cheap Chews" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Ad Concept</span>
+        <img src="images/heartland-15-chew-adv.png" alt="Chew Adv" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Product</span>
+        <img src="images/heartland-16-deer-antler-large.png" alt="Deer Antler" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Decision Aid</span>
+        <img src="images/heartland-17-deer-or-elk.png" alt="Deer or Elk" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Deer or elk? Match the chew to your dog — buyer decision help.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Identity</span>
+        <img src="images/heartland-18-never-tired.png" alt="Never Tired" style="height:auto;object-fit:initial;">
+        <div class="img-caption">For dogs who never get tired — high-energy owner segment.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Reframe</span>
+        <img src="images/heartland-19-working-dog.png" alt="Working Dog" style="height:auto;object-fit:initial;">
+        <div class="img-caption">He's not a problem. He's a working dog with nothing to work on.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Hero</span>
+        <img src="images/heartland-20-main.png" alt="Hero Main" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Benefit</span>
+        <img src="images/heartland-21-keep-chewing.png" alt="Keep Chewing" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Benefit</span>
+        <img src="images/heartland-22-fewer-interruptions.png" alt="Fewer Interruptions" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Origin Story</span>
+        <img src="images/heartland-23-montana.png" alt="Montana" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Right now, somewhere in Montana... — brand origin story hook.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Emotion</span>
+        <img src="images/heartland-24-come-back.png" alt="Come Back" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Benefit</span>
+        <img src="images/heartland-25-every-dog-day.png" alt="Every Dog Day" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Boredom Hook</span>
+        <img src="images/heartland-26-dog-bored.png" alt="Dog Bored" style="height:auto;object-fit:initial;">
+        <div class="img-caption">This is what happens when a dog gets bored — problem hook.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Social Proof</span>
+        <img src="images/heartland-27-two-dogs.png" alt="Two Dogs" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Two dogs. One antler each. The difference was immediate.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Identity</span>
+        <img src="images/heartland-28-needs-job.png" alt="Needs Job" style="height:auto;object-fit:initial;">
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Problem</span>
+        <img src="images/heartland-29-expensive-habit.png" alt="Expensive Habit" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Your dog has an expensive habit — problem-agitate hook.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Data Hook</span>
+        <img src="images/heartland-30-chew-report.png" alt="Chew Report" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Your Dog's Chew Report Is In — authority/data-driven hook.</div>
+      </div>
+      <div class="img-item" onclick="openLightbox(this)">
+        <span class="hook-pill">Objection</span>
+        <img src="images/heartland-31-vet-said.png" alt="Vet Said" style="height:auto;object-fit:initial;">
+        <div class="img-caption">Your vet said no antlers. Here's what they probably saw.</div>
+      </div>
     </div>
   </div>
 
-  <!-- Subsection: May 2026 ChatGPT Ad Batch -->
-  <div class="sub-label">May 2026 — AI-Generated Ad Batch</div>
-  <div class="grid-compact">
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-32.png" alt="Heartland Ad 32"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-33.png" alt="Heartland Ad 33"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-34.png" alt="Heartland Ad 34"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-35.png" alt="Heartland Ad 35"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-36.png" alt="Heartland Ad 36"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-37.png" alt="Heartland Ad 37"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-38.png" alt="Heartland Ad 38"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-39.png" alt="Heartland Ad 39"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-40.png" alt="Heartland Ad 40"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-41.png" alt="Heartland Ad 41"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-42.png" alt="Heartland Ad 42"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-43.png" alt="Heartland Ad 43"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-44.png" alt="Heartland Ad 44"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-45.png" alt="Heartland Ad 45"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-46.png" alt="Heartland Ad 46"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-47.png" alt="Heartland Ad 47"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-48.png" alt="Heartland Ad 48"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-49.png" alt="Heartland Ad 49"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-50.png" alt="Heartland Ad 50"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-51.png" alt="Heartland Ad 51"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-52.png" alt="Heartland Ad 52"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-53.png" alt="Heartland Ad 53"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-54.png" alt="Heartland Ad 54"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-55.png" alt="Heartland Ad 55"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-56.png" alt="Heartland Ad 56"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-57.png" alt="Heartland Ad 57"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-58.png" alt="Heartland Ad 58"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-59.png" alt="Heartland Ad 59"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-60.png" alt="Heartland Ad 60"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-61.png" alt="Heartland Ad 61"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-62.png" alt="Heartland Ad 62"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-63.png" alt="Heartland Ad 63"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-64.png" alt="Heartland Ad 64"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-65.png" alt="Heartland Ad 65"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-66.png" alt="Heartland Ad 66"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-67.png" alt="Heartland Ad 67"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-68.png" alt="Heartland Ad 68"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-69.png" alt="Heartland Ad 69"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-70.png" alt="Heartland Ad 70"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-71.png" alt="Heartland Ad 71"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-72.png" alt="Heartland Ad 72"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-73.png" alt="Heartland Ad 73"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-74.png" alt="Heartland Ad 74"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-75.png" alt="Heartland Ad 75"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-76.png" alt="Heartland Ad 76"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-77.png" alt="Heartland Ad 77"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-78.png" alt="Heartland Ad 78"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-79.png" alt="Heartland Ad 79"></div>
-    <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-80.png" alt="Heartland Ad 80"></div>
+  <!-- TAB: AI Batch -->
+  <div id="heartland-ai" class="tab-panel">
+    <div class="sub-label">AI-Generated Ad Batch — May 2026</div>
+    <div class="grid-compact">
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-32.png" alt="32"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-33.png" alt="33"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-34.png" alt="34"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-35.png" alt="35"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-36.png" alt="36"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-37.png" alt="37"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-38.png" alt="38"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-39.png" alt="39"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-40.png" alt="40"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-41.png" alt="41"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-42.png" alt="42"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-43.png" alt="43"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-44.png" alt="44"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-45.png" alt="45"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-46.png" alt="46"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-47.png" alt="47"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-48.png" alt="48"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-49.png" alt="49"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-50.png" alt="50"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-51.png" alt="51"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-52.png" alt="52"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-53.png" alt="53"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-54.png" alt="54"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-55.png" alt="55"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-56.png" alt="56"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-57.png" alt="57"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-58.png" alt="58"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-59.png" alt="59"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-60.png" alt="60"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-61.png" alt="61"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-62.png" alt="62"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-63.png" alt="63"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-64.png" alt="64"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-65.png" alt="65"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-66.png" alt="66"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-67.png" alt="67"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-68.png" alt="68"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-69.png" alt="69"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-70.png" alt="70"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-71.png" alt="71"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-72.png" alt="72"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-73.png" alt="73"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-74.png" alt="74"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-75.png" alt="75"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-76.png" alt="76"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-77.png" alt="77"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-78.png" alt="78"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-79.png" alt="79"></div>
+      <div class="img-item" onclick="openLightbox(this)"><img src="images/heartland-80.png" alt="80"></div>
+    </div>
   </div>
-
 </section>
 
-<!-- ══════════════════════════ -->
-<!-- 04 · MIP SPORTS PRO       -->
-<!-- ══════════════════════════ -->
+<!-- ═══════════════════════════════════ -->
+<!-- 04 · MIP SPORTS PRO                -->
+<!-- ═══════════════════════════════════ -->
 <section id="mip" class="section-wrap">
   <div class="section-header">
-    <div class="section-meta">
+    <div>
       <div class="section-number">04 / Campaign</div>
       <h2 class="section-title">MIP<br>Sports Pro</h2>
-      <span class="section-brand-tag">Sports · Performance · D2C</span>
+      <span class="section-tag">Sports · Performance · D2C</span>
     </div>
     <div class="section-context">
       <p><strong>The brief:</strong> Performance sports brand — campaign creative built around athlete identity and the psychology of marginal gains. Audience: serious recreational athletes who train like professionals.</p>
@@ -767,21 +720,19 @@
     </div>
   </div>
   <div class="placeholder-card">
-    <div class="placeholder-icon">📲</div>
-    <p>Campaign assets available on request — contact atifghostwrites@gmail.com</p>
+    <p>Campaign assets available on request — <a href="mailto:atifghostwrites@gmail.com" style="color:var(--accent);text-decoration:none;">atifghostwrites@gmail.com</a></p>
   </div>
 </section>
 
-
-<!-- ══════════════════════════ -->
-<!-- 06 · METHOD & HOOKS       -->
-<!-- ══════════════════════════ -->
+<!-- ═══════════════════════════════════ -->
+<!-- 05 · METHOD & HOOKS                -->
+<!-- ═══════════════════════════════════ -->
 <section id="approach" class="section-wrap">
   <div class="section-header">
-    <div class="section-meta">
-      <div class="section-number">06 / Method</div>
+    <div>
+      <div class="section-number">05 / Method</div>
       <h2 class="section-title">How I<br>Write Hooks</h2>
-      <span class="section-brand-tag">Framework · Process</span>
+      <span class="section-tag">Framework · Process</span>
     </div>
     <div class="section-context">
       <p>Every hook starts with the <strong>trigger event</strong> — the specific moment a person reaches for their phone and searches. Not the demographic. Not the product benefit. The moment.</p>
@@ -856,15 +807,15 @@
   </div>
 </section>
 
-<!-- ══════════════════════════ -->
-<!-- 07 · STRATEGY SAMPLE      -->
-<!-- ══════════════════════════ -->
+<!-- ═══════════════════════════════════ -->
+<!-- 06 · STRATEGY SAMPLE               -->
+<!-- ═══════════════════════════════════ -->
 <section id="strategy" class="section-wrap">
   <div class="section-header">
-    <div class="section-meta">
-      <div class="section-number">07 / Strategy</div>
+    <div>
+      <div class="section-number">06 / Strategy</div>
       <h2 class="section-title">Strategy<br>Sample</h2>
-      <span class="section-brand-tag">Skynflow · Skin Brand</span>
+      <span class="section-tag">Skynflow · Skin Brand</span>
     </div>
     <div class="section-context">
       <p>A full creative strategy document built speculatively for a skin brand — demonstrating how I approach brand positioning, angle development, and concept development from a blank brief.</p>
@@ -911,22 +862,28 @@
 </footer>
 
 <script>
-  function openLightbox(el) {
-    const img = el.querySelector('img');
-    document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
+function showTab(section, panel, btn) {
+  document.querySelectorAll('#' + section + '-tabs .tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('[id^="' + section + '-"]').forEach(p => { if(p.classList.contains('tab-panel')) p.classList.remove('active'); });
+  document.getElementById(section + '-' + panel).classList.add('active');
+  btn.classList.add('active');
+}
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
 </script>
 </body>
 </html>

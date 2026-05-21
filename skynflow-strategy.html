@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skynflow: 3 fresh angles + 1 full brief</title>
+<style>
+  :root {
+    --ivory:   #FAF9F5;
+    --slate:   #141413;
+    --clay:    #D97757;
+    --oat:     #E3DACC;
+    --olive:   #788C5D;
+    --sky:     #6A8CAF;
+    --berry:   #B04A3F;
+    --gray-150:#F0EEE6;
+    --gray-300:#D1CFC5;
+    --gray-500:#87867F;
+    --gray-700:#3D3D3A;
+    --white:   #FFFFFF;
+    --serif: ui-serif, Georgia, "Times New Roman", serif;
+    --sans:  system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono:  ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--ivory);
+    color: var(--gray-700);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    padding: 56px 24px 120px;
+  }
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 48px;
+  }
+  @media (max-width: 1000px) { .page { grid-template-columns: 1fr; } aside { order: 2; position: static; } }
+
+  /* header */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 36px;
+    color: var(--slate);
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+    line-height: 1.15;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--slate);
+    margin: 48px 0 14px;
+    letter-spacing: -0.005em;
+  }
+  h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 19px;
+    color: var(--slate);
+    margin: 0 0 8px;
+  }
+  .lead { max-width: 680px; margin-bottom: 8px; font-size: 16px; }
+  p { margin-bottom: 12px; max-width: 720px; }
+  code { font-family: var(--mono); font-size: 13px; background: var(--gray-150); padding: 1px 5px; border-radius: 3px; }
+  em { font-style: italic; color: var(--slate); }
+  strong { color: var(--slate); font-weight: 600; }
+
+  .note {
+    border-left: 3px solid var(--clay);
+    background: rgba(217,119,87,0.06);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    max-width: 720px;
+    margin: 16px 0 8px;
+    color: var(--gray-700);
+  }
+  .note strong { color: var(--slate); }
+
+  /* the four-step loop panel */
+  .loop {
+    border: 1.5px solid var(--gray-300);
+    border-radius: 14px;
+    background: var(--white);
+    padding: 24px 24px 18px;
+    margin: 18px 0 8px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  @media (max-width: 760px) { .loop { grid-template-columns: 1fr; } }
+  .loop svg { display: block; width: 100%; max-width: 220px; }
+  .loop ol { list-style: none; counter-reset: step; }
+  .loop ol li {
+    counter-increment: step;
+    padding: 10px 0 10px 38px;
+    position: relative;
+    border-bottom: 1px solid var(--gray-150);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .loop ol li:last-child { border-bottom: 0; }
+  .loop ol li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--oat);
+    color: var(--slate);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+  .loop ol li b { color: var(--slate); }
+
+  /* saturation table */
+  .satgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 14px 0 8px;
+    max-width: 880px;
+  }
+  @media (max-width: 760px) { .satgrid { grid-template-columns: 1fr; } }
+  .satcol {
+    border: 1.5px solid var(--gray-300);
+    border-radius: 12px;
+    background: var(--white);
+    padding: 18px 20px;
+  }
+  .satcol.crowded { border-top: 4px solid var(--berry); }
+  .satcol.open    { border-top: 4px solid var(--olive); }
+  .satcol .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 4px;
+  }
+  .satcol h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--slate);
+    margin-bottom: 12px;
+  }
+  .satcol ul { list-style: none; }
+  .satcol ul li {
+    font-size: 13.5px;
+    line-height: 1.55;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--gray-150);
+    color: var(--gray-700);
+  }
+  .satcol ul li:last-child { border-bottom: 0; }
+  .satcol.open ul li b { color: var(--olive); }
+  .satcol.crowded ul li b { color: var(--berry); }
+
+  /* angle cards (artboard grid pattern) */
+  .board {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 16px 0 8px;
+  }
+  .angle {
+    background: var(--white);
+    border: 1.5px solid var(--gray-300);
+    border-radius: 14px;
+    padding: 24px 26px 22px;
+    position: relative;
+  }
+  .angle .tag {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: var(--oat);
+    color: var(--slate);
+    padding: 4px 10px;
+    border-radius: 8px;
+  }
+  .angle .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 6px;
+  }
+  .angle h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
+    max-width: 90%;
+  }
+  .angle .row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 14px;
+    padding: 10px 0;
+    border-top: 1px solid var(--gray-150);
+    font-size: 14px;
+  }
+  .angle .row:first-of-type { border-top: 1.5px solid var(--gray-300); margin-top: 8px; }
+  .angle .row .k {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    padding-top: 2px;
+  }
+  .angle .row .v { color: var(--gray-700); line-height: 1.55; }
+  .angle .row .v b { color: var(--slate); }
+
+  .hooks {
+    margin-top: 12px;
+    background: var(--gray-150);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .hooks .hk-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 8px;
+  }
+  .hooks ol { list-style: none; counter-reset: hook; }
+  .hooks ol li {
+    counter-increment: hook;
+    padding: 8px 0 8px 28px;
+    position: relative;
+    font-size: 13.5px;
+    line-height: 1.55;
+    border-bottom: 1px dashed var(--gray-300);
+    color: var(--gray-700);
+  }
+  .hooks ol li:last-child { border-bottom: 0; }
+  .hooks ol li::before {
+    content: counter(hook);
+    position: absolute;
+    left: 0;
+    top: 9px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--clay);
+    font-weight: 600;
+  }
+  .hooks ol li em { font-style: normal; color: var(--slate); }
+  .hooks ol li .stage-note {
+    display: block;
+    font-size: 11.5px;
+    color: var(--gray-500);
+    margin-top: 3px;
+    font-family: var(--sans);
+  }
+
+  /* awareness diagram */
+  .awareness {
+    border: 1.5px solid var(--gray-300);
+    border-radius: 14px;
+    background: var(--white);
+    padding: 22px 24px;
+    margin: 16px 0;
+    max-width: 880px;
+  }
+  .awareness svg { display: block; width: 100%; height: auto; }
+  .awareness .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 12px;
+    font-size: 12.5px;
+    color: var(--gray-700);
+  }
+  .awareness .legend span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .awareness .legend i {
+    width: 12px; height: 12px; border-radius: 3px; display: inline-block;
+  }
+
+  /* brief block */
+  .brief {
+    border: 1.5px solid var(--gray-300);
+    border-radius: 14px;
+    background: var(--white);
+    padding: 0;
+    margin: 18px 0 0;
+    overflow: hidden;
+  }
+  .brief .head {
+    background: var(--slate);
+    color: var(--ivory);
+    padding: 18px 24px;
+  }
+  .brief .head .code-id {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--oat);
+    margin-bottom: 4px;
+  }
+  .brief .head h3 {
+    color: var(--ivory);
+    font-size: 22px;
+    margin: 0;
+  }
+  .brief .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0;
+    border-bottom: 1.5px solid var(--gray-300);
+  }
+  .brief .meta div {
+    padding: 12px 18px;
+    border-right: 1px solid var(--gray-150);
+    font-size: 12.5px;
+  }
+  .brief .meta div:last-child { border-right: 0; }
+  .brief .meta .mk {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    display: block;
+    margin-bottom: 3px;
+  }
+  .brief .meta .mv { color: var(--slate); font-weight: 500; }
+
+  .timeline {
+    padding: 22px 24px 6px;
+  }
+  .beat {
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 18px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gray-150);
+  }
+  .beat:last-child { border-bottom: 0; }
+  .beat .ts {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--clay);
+    padding-top: 4px;
+    letter-spacing: 0.02em;
+  }
+  .beat .body { font-size: 14px; line-height: 1.6; }
+  .beat .body .ln {
+    display: block;
+    margin: 3px 0;
+  }
+  .beat .body .ln .lk {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-right: 6px;
+  }
+  .beat .body .vo {
+    background: var(--gray-150);
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 6px 0;
+    font-style: italic;
+    color: var(--slate);
+    font-family: var(--serif);
+    font-size: 14px;
+  }
+  .beat .body .ost {
+    border-left: 2px solid var(--olive);
+    padding: 2px 0 2px 10px;
+    margin: 6px 0;
+    font-size: 13px;
+    color: var(--gray-700);
+  }
+  .beat .body .ost b { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); display: block; margin-bottom: 2px; }
+
+  .brief .section {
+    padding: 18px 24px;
+    border-top: 1.5px solid var(--gray-300);
+  }
+  .brief .section h4 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--slate);
+    margin-bottom: 10px;
+  }
+  .brief .section ul {
+    list-style: none;
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+  .brief .section ul li {
+    padding: 6px 0 6px 18px;
+    position: relative;
+  }
+  .brief .section ul li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    color: var(--clay);
+  }
+  .brief .section ul li b { color: var(--slate); }
+  .variants {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .variant {
+    background: var(--gray-150);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .variant .vid {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--clay);
+    margin-bottom: 4px;
+  }
+  .variant b { color: var(--slate); }
+
+  /* day-one needs */
+  .needs {
+    border: 1.5px solid var(--gray-300);
+    border-radius: 12px;
+    background: var(--white);
+    padding: 22px 24px;
+    margin: 18px 0;
+    max-width: 880px;
+  }
+  .needs ol { list-style: none; counter-reset: need; }
+  .needs ol li {
+    counter-increment: need;
+    padding: 12px 0 12px 38px;
+    position: relative;
+    border-bottom: 1px solid var(--gray-150);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .needs ol li:last-child { border-bottom: 0; }
+  .needs ol li::before {
+    content: counter(need, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--clay);
+    font-weight: 600;
+  }
+
+  /* sidebar */
+  aside {
+    position: sticky;
+    top: 32px;
+    align-self: start;
+    border: 1.5px solid var(--gray-300);
+    border-radius: 12px;
+    background: var(--white);
+    padding: 20px 20px 10px;
+  }
+  aside .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+  }
+  aside dl dt {
+    font-family: var(--serif);
+    font-size: 15px;
+    color: var(--slate);
+    margin-top: 0;
+  }
+  aside dl dd {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--gray-700);
+    margin: 2px 0 14px;
+  }
+  aside .nav {
+    border-top: 1px solid var(--gray-150);
+    margin-top: 6px;
+    padding-top: 14px;
+  }
+  aside .nav a {
+    display: block;
+    font-size: 12.5px;
+    color: var(--gray-700);
+    text-decoration: none;
+    padding: 5px 0;
+    border-bottom: 1px dotted transparent;
+  }
+  aside .nav a:hover { color: var(--clay); border-bottom-color: var(--clay); }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <main>
+    <div class="eyebrow">Sample deliverable · creative strategy</div>
+    <h1>Skynflow: three fresh angles and one full brief</h1>
+    <p class="lead">
+      Built in about ninety minutes from the job post plus a competitive read of the anti-aging-for-40+
+      category. The point isn't that these are <em>the</em> answer. It's to show you what I'd hand you on
+      Monday morning of week one.
+    </p>
+
+    <div class="note">
+      <strong>One honest note before you read.</strong> I haven't pulled your live ad library, your customer
+      reviews, or your survey responses. The angles below are educated bets from category knowledge, not
+      data-validated ones. With your actual VOC data on day one, the next round gets roughly three times
+      sharper. The process is the same either way.
+    </div>
+
+    <h2 id="process">How I got here</h2>
+    <p>
+      Before I write a single hook, I run the same four-step scan. Run weekly against your real performance
+      data, it generates ten-plus testable concepts a week without defaulting to another
+      <span style="color:var(--slate)">dermatologist-in-a-white-coat</span> talking head.
+    </p>
+
+    <div class="loop">
+      <svg viewBox="0 0 220 220" aria-label="The four-step angle-finding loop">
+        <!-- background ring -->
+        <circle cx="110" cy="110" r="78" fill="none" stroke="#D1CFC5" stroke-width="1.5" stroke-dasharray="3 4"/>
+        <!-- four nodes -->
+        <g font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#141413" text-anchor="middle">
+          <!-- top: saturation -->
+          <circle cx="110" cy="32" r="22" fill="#E3DACC" stroke="#D97757" stroke-width="1.5"/>
+          <text x="110" y="36">01</text>
+          <text x="110" y="14" font-size="10" fill="#87867F">saturation</text>
+          <!-- right: mining -->
+          <circle cx="188" cy="110" r="22" fill="#E3DACC" stroke="#D97757" stroke-width="1.5"/>
+          <text x="188" y="114">02</text>
+          <text x="188" y="148" font-size="10" fill="#87867F">mining</text>
+          <!-- bottom: triggers -->
+          <circle cx="110" cy="188" r="22" fill="#E3DACC" stroke="#D97757" stroke-width="1.5"/>
+          <text x="110" y="192">03</text>
+          <text x="110" y="216" font-size="10" fill="#87867F">triggers</text>
+          <!-- left: whitespace -->
+          <circle cx="32" cy="110" r="22" fill="#E3DACC" stroke="#D97757" stroke-width="1.5"/>
+          <text x="32" y="114">04</text>
+          <text x="32" y="148" font-size="10" fill="#87867F">whitespace</text>
+        </g>
+        <!-- arrows around -->
+        <g fill="#D97757">
+          <polygon points="178,55 174,49 184,49"/>
+          <polygon points="178,165 184,171 174,171"/>
+          <polygon points="42,165 38,171 48,171"/>
+          <polygon points="42,55 48,49 38,49"/>
+        </g>
+      </svg>
+
+      <ol>
+        <li><b>Saturation scan.</b> Pull active competitor ads from the Meta Ad Library. Not to copy what's working. To identify the lane eighty percent of competitors are crowding so I can deliberately stay out of it. For 40+ skincare, that lane is almost always two things: dermatologist authority and dramatic before-afters.</li>
+        <li><b>Comment and review mining.</b> Scroll the comments under competitor ads and the review sections of competing products. Not for testimonials, for <em>language</em>. The phrase "I don't recognize myself in the mirror" is worth more than any positioning workshop. I'm looking for raw, in-group emotional phrasing nobody is putting in copy yet.</li>
+        <li><b>Trigger event mapping.</b> List the specific moments that make a 47-year-old woman google a skincare product at 11pm on a Tuesday. Almost never "my skin." It's a photo she just got tagged in. A comment her mother made. The first time her teenager called her old. Trigger events are where hooks live.</li>
+        <li><b>White space test.</b> For every angle candidate, ask: would a media buyer at City Beauty or Crepe Erase recognize this angle? If yes, kill it. If no, brief it.</li>
+      </ol>
+    </div>
+
+    <h2 id="saturation">What the category is doing right now</h2>
+    <p>
+      Quick read from public Meta Ad Library scans plus competitive intel in the anti-aging-for-women-40+
+      space. Verify against your actual ad library on day one. If any of the white-space angles below are
+      already in Skynflow's rotation, we swap them.
+    </p>
+
+    <div class="satgrid">
+      <div class="satcol crowded">
+        <div class="label">Saturated lane · avoid</div>
+        <h4>What 80% of competitors are running</h4>
+        <ul>
+          <li><b>Dermatologist authority.</b> White coat, clinic backdrop, ingredient explainer.</li>
+          <li><b>Side-by-side before/after.</b> Sliding bar, dramatic reveal, often AI-enhanced.</li>
+          <li><b>14-day try-on UGC.</b> "I tried it for two weeks and look what happened."</li>
+          <li><b>Ingredient-led education.</b> Retinol, peptides, hyaluronic acid as the hero.</li>
+          <li><b>Hero customer social proof.</b> A 65-year-old who looks 50, testimonial-led.</li>
+        </ul>
+      </div>
+      <div class="satcol open">
+        <div class="label">White space · attack</div>
+        <h4>What almost nobody is running</h4>
+        <ul>
+          <li><b>The mirror-confrontation moment.</b> The emotional trigger <em>preceding</em> the search.</li>
+          <li><b>Daughter-vs-mother identity.</b> 40+ women define against their own mothers' aging, not against younger women.</li>
+          <li><b>Self-talk as hook.</b> Internal monologue, not testimonial.</li>
+          <li><b>"I'm not trying to look 25. I'm trying to look like me."</b></li>
+          <li><b>Grief-of-aging, honestly.</b> No resolution-by-product-shot.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:13px; color:var(--gray-500); max-width:680px; margin-top:6px;">
+      The three angles below all live in the right-hand column. That's the entire point of the scan.
+    </p>
+
+    <h2 id="angles">Three angles</h2>
+
+    <div class="board">
+
+      <!-- ANGLE 1 -->
+      <div class="angle" id="a1">
+        <span class="tag">retargeting · warm</span>
+        <div class="num">Angle 01</div>
+        <h3>"I don't want to look younger. I want to look like myself."</h3>
+
+        <div class="row">
+          <div class="k">The angle</div>
+          <div class="v">Reframe anti-aging from <b>looking younger</b> (which 40+ women feel patronized by) to <b>looking like yourself</b> (which is what they're actually feeling).</div>
+        </div>
+        <div class="row">
+          <div class="k">Psychology</div>
+          <div class="v">Women 40+ have been targeted by "look 10 years younger" ads since their twenties. They're done. The dominant emotion isn't a desire to be 25 again. It's the quiet grief of not recognizing themselves in photos. The angle that wins says: <em>I see you, and the goal isn't time travel. It's coming home to your own face.</em></div>
+        </div>
+        <div class="row">
+          <div class="k">Why different</div>
+          <div class="v">Every competitor is selling "younger." Nobody is selling "you." The category is competing on a value (youth) the customer is increasingly cynical about. This angle steps off the field entirely.</div>
+        </div>
+        <div class="row">
+          <div class="k">Visual / format</div>
+          <div class="v">UGC, lo-fi, shot on a phone, natural light. <em>No</em> skincare-counter aesthetic. Product appears at 0:18, not 0:03. Hero is the woman's face and the photograph in her hand, not the bottle. 9:16, 30 seconds, captioned, sound-off-readable.</div>
+        </div>
+
+        <div class="hooks">
+          <div class="hk-label">3 hook variations (rough)</div>
+          <ol>
+            <li><em>"I'm 49. I don't want to look 30. I want to look like the version of me my husband fell for at 34."</em><span class="stage-note">Voiceover over a photo album, hand turning pages.</span></li>
+            <li><em>"My daughter handed me her phone last week and said 'mom, who's this?' It was a photo of me from three years ago. That's when I started looking for this."</em><span class="stage-note">UGC, first-person, no product in frame for first 8 seconds.</span></li>
+            <li><em>"Stop trying to look younger. It's not working and it's making you look older."</em><span class="stage-note">Pattern-interrupt text-on-screen, then a real woman, no makeup, mid-40s, direct to camera.</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ANGLE 2 -->
+      <div class="angle" id="a2">
+        <span class="tag">cold prospecting · TOF</span>
+        <div class="num">Angle 02</div>
+        <h3>"The mirror, the photo, the meeting." Trigger-event angle.</h3>
+
+        <div class="row">
+          <div class="k">The angle</div>
+          <div class="v">Open every ad at the exact moment a woman <b>notices</b> her aging. Not the moment she decides to do something about it.</div>
+        </div>
+        <div class="row">
+          <div class="k">Psychology</div>
+          <div class="v">Decisions to buy skincare get made hours or days after the trigger event. But the <em>emotional opening</em> (the second a woman is willing to feel the thing she usually pushes down) happens in three places: looking up at a mirror she wasn't planning to, seeing herself in a photo someone else took, and seeing her reflection in a conference-room glass before a meeting. Anchor the ad to one of those moments and you bypass three years of skepticism.</div>
+        </div>
+        <div class="row">
+          <div class="k">Why different</div>
+          <div class="v">The category opens with the problem ("crow's feet, sagging, deep lines"). This opens with the <em>moment of noticing</em>. Same problem, completely different psychological frame. A hundred times more relatable.</div>
+        </div>
+        <div class="row">
+          <div class="k">Visual / format</div>
+          <div class="v">Cinematic in the first 3 seconds, <em>deliberately</em> unlike the rest of the category's UGC-cliché aesthetic. Slow, quiet, observational. Then the second half can be conventional product/UGC. The contrast is the point. Test 9:16 and 1:1 versions; the cinematic opener works hard on both.</div>
+        </div>
+
+        <div class="hooks">
+          <div class="hk-label">3 hook variations (rough)</div>
+          <ol>
+            <li><em>"It's the photo. It's always the photo."</em><span class="stage-note">Static shot: a woman flipping through her phone, smile fading as one image lands. Five seconds of silence before any copy.</span></li>
+            <li><em>"You're in a meeting. The light catches your face in the glass. And you think: when did that happen?"</em><span class="stage-note">Cold open, second-person, voiceover over a slow-motion office shot.</span></li>
+            <li><em>"Every woman I know has had The Mirror Moment. Mine was last March, at 8:47am, in a hotel bathroom in Cleveland."</em><span class="stage-note">UGC, founder or customer, specific to the point of feeling true.</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- ANGLE 3 -->
+      <div class="angle" id="a3">
+        <span class="tag">comparison shoppers · BOF</span>
+        <div class="num">Angle 03</div>
+        <h3>"What 40+ skin actually needs that 25-year-old skin doesn't."</h3>
+
+        <div class="row">
+          <div class="k">The angle</div>
+          <div class="v">Position Skynflow against generic anti-aging by claiming a <b>category of one</b>: products engineered for the biology of skin that has already started aging, not for prevention.</div>
+        </div>
+        <div class="row">
+          <div class="k">Psychology</div>
+          <div class="v">Women 40+ resent being marketed to with the same ingredients influencers in their 20s use "preventatively." There's a felt truth that what works in your 20s doesn't work in your 40s, and the category mostly ignores it because the same actives get sold to everyone. An angle that says <em>your skin is a different organ now and it needs a different product</em> is permission-giving and authority-building at once.</div>
+        </div>
+        <div class="row">
+          <div class="k">Why different</div>
+          <div class="v">This is the education angle, inverted. Instead of education-as-feature-dump (which competitors do badly), it's education-as-permission. "You're not behind. The category is selling you the wrong product for your age." That's a frame.</div>
+        </div>
+        <div class="row">
+          <div class="k">Visual / format</div>
+          <div class="v">Static and short video both work. Lean into "specialist not generalist" visually: clean, slightly clinical, but warmer than the dermatologist-talking-head cliché. If video, 15-20 seconds, captioned, claim-first. CTA points to a quiz or age-specific landing page, not the generic homepage.</div>
+        </div>
+
+        <div class="hooks">
+          <div class="hk-label">3 hook variations (rough)</div>
+          <ol>
+            <li><em>"A 25-year-old's skin and a 47-year-old's skin are different organs. Why are we using the same products?"</em><span class="stage-note">Static, two close-ups of skin side-by-side, text overlay. Stops the scroll because it's a real question nobody in the feed is asking.</span></li>
+            <li><em>"I spent $4,000 on serums in my 30s. None of them worked in my 40s. Here's why."</em><span class="stage-note">UGC, founder or testimonial. Specific number is the credibility lever.</span></li>
+            <li><em>"Your skin stopped responding to retinol three years ago. You probably didn't notice."</em><span class="stage-note">Pattern-interrupt claim hook, read by someone who looks 45 and credible, not by a dermatologist character.</span></li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
+
+    <h2 id="why-three">Why these three together</h2>
+    <p>
+      Each angle hits a different awareness stage, so they run in parallel without cannibalizing. If I were
+      running this as the first test slate, the budget split below is where I'd start.
+    </p>
+
+    <div class="awareness">
+      <svg viewBox="0 0 880 220" aria-label="Three angles mapped to awareness stages and budget split">
+        <!-- axis -->
+        <line x1="40" y1="170" x2="840" y2="170" stroke="#D1CFC5" stroke-width="1.5"/>
+        <g font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#87867F">
+          <text x="40" y="190">unaware</text>
+          <text x="240" y="190">problem aware</text>
+          <text x="460" y="190">solution aware</text>
+          <text x="660" y="190">product aware</text>
+          <text x="820" y="190" text-anchor="end">most aware</text>
+        </g>
+
+        <!-- angle 2 bar: unaware to problem aware, 60% -->
+        <g>
+          <rect x="60" y="40" width="280" height="70" rx="8" fill="#6A8CAF" opacity="0.18" stroke="#6A8CAF" stroke-width="1.5"/>
+          <text x="80" y="62" font-family="ui-serif, Georgia, serif" font-size="14" fill="#141413">Angle 02 · Trigger event</text>
+          <text x="80" y="80" font-family="system-ui, sans-serif" font-size="11" fill="#3D3D3A">Cold prospecting · top of funnel</text>
+          <text x="320" y="76" font-family="ui-monospace, Menlo, monospace" font-size="18" fill="#6A8CAF" text-anchor="end" font-weight="600">60%</text>
+          <text x="320" y="92" font-family="ui-monospace, Menlo, monospace" font-size="9" fill="#87867F" text-anchor="end">of new-creative budget</text>
+        </g>
+
+        <!-- angle 1 bar: problem aware, 25% -->
+        <g>
+          <rect x="220" y="120" width="280" height="40" rx="8" fill="#D97757" opacity="0.18" stroke="#D97757" stroke-width="1.5"/>
+          <text x="240" y="142" font-family="ui-serif, Georgia, serif" font-size="13" fill="#141413">Angle 01 · Look like myself</text>
+          <text x="480" y="146" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#D97757" text-anchor="end" font-weight="600">25%</text>
+        </g>
+
+        <!-- angle 3 bar: solution to product aware, 15% -->
+        <g>
+          <rect x="500" y="40" width="320" height="40" rx="8" fill="#788C5D" opacity="0.18" stroke="#788C5D" stroke-width="1.5"/>
+          <text x="520" y="62" font-family="ui-serif, Georgia, serif" font-size="13" fill="#141413">Angle 03 · 40+ specific biology</text>
+          <text x="800" y="66" font-family="ui-monospace, Menlo, monospace" font-size="16" fill="#788C5D" text-anchor="end" font-weight="600">15%</text>
+        </g>
+
+        <!-- title-ish -->
+        <text x="40" y="22" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#87867F" letter-spacing="0.08em">AWARENESS STAGE → BUDGET ALLOCATION</text>
+      </svg>
+      <div class="legend">
+        <span><i style="background:#6A8CAF"></i> Angle 02 carries the most upside (biggest white space)</span>
+        <span><i style="background:#D97757"></i> Angle 01 has the lowest production cost</span>
+        <span><i style="background:#788C5D"></i> Angle 03 converts the most ready-to-buy audience</span>
+      </div>
+    </div>
+
+    <h2 id="brief">Full brief: Angle 02, Concept 01</h2>
+    <p>
+      This is what I hand to an editor or a UGC creator. Format adapted from how I've briefed editors at past
+      brands. Yours may have a different template. I'll match whatever Frame.io and ClickUp structure you're
+      already using.
+    </p>
+
+    <div class="brief">
+      <div class="head">
+        <div class="code-id">SF-A2-C1-v1</div>
+        <h3>"It's the photo. It's always the photo."</h3>
+      </div>
+
+      <div class="meta">
+        <div><span class="mk">Format</span><span class="mv">9:16 · 30s</span></div>
+        <div><span class="mk">Audio</span><span class="mv">Sound-on opt · captioned</span></div>
+        <div><span class="mk">Platform</span><span class="mv">Meta · TikTok · Shorts</span></div>
+        <div><span class="mk">Awareness</span><span class="mv">Problem → Solution</span></div>
+        <div><span class="mk">Primary KPI</span><span class="mv">Hook rate · Thumb stop</span></div>
+        <div><span class="mk">Secondary KPI</span><span class="mv">CTR · 7-day ROAS</span></div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="beat">
+          <div class="ts">0:00 to 0:03<br><span style="color:var(--gray-500)">HOOK</span></div>
+          <div class="body">
+            <span class="ln"><span class="lk">Visual</span>Tight overhead shot of a woman's hand on a phone screen, swiping through camera roll. Late-40s hands, visible but not exaggerated. Natural light. We see the screen.</span>
+            <span class="ln"><span class="lk">Audio</span>No music. Just ambient. The sound of a thumb on glass.</span>
+            <div class="ost"><b>On-screen text</b>"It's the photo." → cut at 0:02 → "It's always the photo."</div>
+            <span class="ln"><span class="lk">End frame</span>Thumb stops on one image. We don't see her face yet, only her reaction in the faint reflection on the screen.</span>
+          </div>
+        </div>
+
+        <div class="beat">
+          <div class="ts">0:03 to 0:08<br><span style="color:var(--gray-500)">REVEAL</span></div>
+          <div class="body">
+            <span class="ln"><span class="lk">Visual</span>Slow pull-up reveal. We see her face for the first time. Mid-40s, no makeup, sitting on a couch, late-afternoon light from one window. She's looking at the phone. The expression is not sad. It's <em>quiet recognition</em>. She doesn't perform. She just looks.</span>
+            <div class="vo">"I wasn't looking for it. I was just scrolling. And then I stopped on a picture from two summers ago."</div>
+          </div>
+        </div>
+
+        <div class="beat">
+          <div class="ts">0:08 to 0:14<br><span style="color:var(--gray-500)">CONTRAST</span></div>
+          <div class="body">
+            <span class="ln"><span class="lk">Visual</span>Cut to the photo on the phone, full-frame. Her, two years younger, laughing at something off-camera. Cut back to her face now, in the present. The contrast is gentle, not dramatic. That's the point. We're not selling a face-lift. We're selling recognition.</span>
+            <div class="vo">"And I didn't recognize her. Not really. That's when I started looking for something that worked."</div>
+          </div>
+        </div>
+
+        <div class="beat">
+          <div class="ts">0:14 to 0:22<br><span style="color:var(--gray-500)">PRODUCT</span></div>
+          <div class="body">
+            <span class="ln"><span class="lk">Visual</span>Cut to her at a bathroom counter, applying [PRODUCT]. Hands, face, bottle visible but not hero. Daylight, not ring light. Looks like her life, not a set.</span>
+            <div class="vo">"I'm not trying to look like I did at 30. I'm trying to look like me. The version I see when I close my eyes."</div>
+            <div class="ost"><b>Lower third</b>Skynflow. For women who are done being marketed to.</div>
+          </div>
+        </div>
+
+        <div class="beat">
+          <div class="ts">0:22 to 0:30<br><span style="color:var(--gray-500)">CTA</span></div>
+          <div class="body">
+            <span class="ln"><span class="lk">Visual</span>Final shot. Same couch, same light. She looks up at the camera. Smiles, small. Holds the bottle in frame for the first time.</span>
+            <div class="vo">"If you've had that moment with the photo, this is what helped."</div>
+            <div class="ost"><b>On-screen text</b>Free shipping on your first bottle · 60-day money-back</div>
+            <span class="ln"><span class="lk">Button</span><b>SHOP NOW</b></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="section">
+        <h4>Direction notes for the creator and editor</h4>
+        <ul>
+          <li><b>She doesn't perform.</b> The single most important note. No "selling to camera." No before-and-after face. No reveal. The whole ad rests on her looking like a real person who had a real moment. If the take feels acted, kill it and reshoot.</li>
+          <li><b>No music for the first 8 seconds.</b> The silence is the pattern interrupt. Add a soft piano or ambient pad from 0:08 onward, low in the mix.</li>
+          <li><b>Captions.</b> Helvetica or similar sans-serif, white with subtle drop shadow. Animate in word-by-word for the first hook line. Static for the body voiceover.</li>
+          <li><b>Color grade.</b> Warm, slightly desaturated. <em>Not</em> bright-and-airy skincare-influencer. Closer to journalistic / documentary.</li>
+          <li><b>Aspect.</b> Shoot 9:16 native. Reframe to 1:1 for Feed placements. The 9:16 is the hero version.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h4>What I'd test as variants on this concept</h4>
+        <div class="variants">
+          <div class="variant">
+            <div class="vid">v2 · age sensitivity</div>
+            Same script, woman is 52-55 instead of 45-47. Tests whether the angle skews older or younger in our target.
+          </div>
+          <div class="variant">
+            <div class="vid">v3 · emotional + functional</div>
+            Same hook, second half pivots to a quick product demo (application, ingredients). Tests whether the emotional opener can carry a more conventional body.
+          </div>
+          <div class="variant">
+            <div class="vid">v4 · trigger event swap</div>
+            Same opening visual, different trigger swap: "It's the mirror" or "It's the meeting." Tests which trigger event hooks harder for cold audiences.
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h4>Production estimate</h4>
+        <ul>
+          <li><b>UGC route.</b> 1 creator, 1 shoot day, $400 to $800 talent plus edit. Turnaround 5 to 7 days.</li>
+          <li><b>Semi-produced route.</b> 1 talent, 1 cinematographer, 1 shoot day, $1,500 to $3,000 all-in. Turnaround 10 to 14 days. Recommended for v1 hero since the angle lives or dies on the cinematic opener.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h2 id="day-one">What I'd want from you on day one</h2>
+    <p>
+      To take these from "smart guesses" to "data-validated bets," I'd need four things before generating
+      concepts at volume.
+    </p>
+
+    <div class="needs">
+      <ol>
+        <li><b>The last 90 days of Meta ad performance data.</b> Winners and losers, both. So I can pattern-match what's actually working before I write anything new.</li>
+        <li><b>The customer survey responses and review database.</b> The hooks above are inferred. With your actual VOC data, they get sharper fast.</li>
+        <li><b>The current creative slate.</b> So I can avoid pitching angles already in rotation.</li>
+        <li><b>A 30-minute call with you and the media buyer.</b> To understand what "winning" means at the account level right now: scaling top-of-funnel, lowering CPA on retargeting, or breaking creative fatigue on a specific audience.</li>
+      </ol>
+    </div>
+    <p style="font-size:13.5px; color:var(--gray-500); max-width:680px;">
+      Give me those four things and trial-period output gets roughly three times sharper than what you're
+      reading here.
+    </p>
+
+  </main>
+
+  <!-- sidebar -->
+  <aside>
+    <div class="label">On this page</div>
+    <nav class="nav">
+      <a href="#process">01 · The four-step process</a>
+      <a href="#saturation">02 · What the category is doing</a>
+      <a href="#angles">03 · Three angles</a>
+      <a href="#why-three">04 · Why these three together</a>
+      <a href="#brief">05 · Full brief</a>
+      <a href="#day-one">06 · What I'd want day one</a>
+    </nav>
+
+    <div class="label" style="margin-top:22px;">Glossary</div>
+    <dl>
+      <dt>Saturated lane</dt>
+      <dd>The messaging territory eighty percent of competitors are crowding. Avoid by default.</dd>
+      <dt>White space</dt>
+      <dd>The territory almost nobody is occupying. The whole point of competitor research.</dd>
+      <dt>Trigger event</dt>
+      <dd>The specific moment that pushes a prospect from passive to actively searching. Not the problem itself.</dd>
+      <dt>Awareness stage</dt>
+      <dd>Where the prospect sits on Schwartz's scale, from unaware to most aware. Determines which angle works.</dd>
+      <dt>Hook rate</dt>
+      <dd>3-second video plays divided by impressions. The first metric that tells you whether the opener earned its keep.</dd>
+      <dt>TOF / BOF</dt>
+      <dd>Top of funnel (cold prospecting) and bottom of funnel (warm shoppers ready to buy).</dd>
+    </dl>
+  </aside>
+
+</div>
+
+</body>
+</html>

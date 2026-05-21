@@ -6,582 +6,145 @@
 <title>Muhammad Atif — Creative Strategist Portfolio</title>
 <style>
   :root {
-    --bg:        #0C0C0C;
-    --surface:   #161616;
-    --border:    #2A2A2A;
-    --copper:    #D97757;
-    --copper-dim:#A85A3C;
-    --cream:     #F5F2EC;
-    --muted:     #888;
-    --white:     #FFFFFF;
-    --serif:     ui-serif, Georgia, "Times New Roman", serif;
-    --sans:      system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --mono:      ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --bg:      #0C0C0C;
+    --surface: #161616;
+    --border:  #2A2A2A;
+    --copper:  #D97757;
+    --cream:   #F5F2EC;
+    --muted:   #888;
+    --white:   #FFFFFF;
+    --serif:   ui-serif, Georgia, "Times New Roman", serif;
+    --sans:    system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--cream); font-family: var(--sans); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
-  body {
-    background: var(--bg);
-    color: var(--cream);
-    font-family: var(--sans);
-    font-size: 15px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(12,12,12,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
-    height: 52px;
-  }
-  .nav-brand {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--copper);
-    text-decoration: none;
-  }
-  .nav-links {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-  }
-  .nav-links a {
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(12,12,12,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 52px; }
+  .nav-brand { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); text-decoration: none; }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--copper); }
   @media (max-width: 700px) { .nav-links { display: none; } }
 
-  /* ── HERO ── */
-  .hero {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 96px 32px 80px;
-  }
-  .hero-eyebrow {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--copper);
-    margin-bottom: 20px;
-  }
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(38px, 6vw, 64px);
-    font-weight: 400;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    color: var(--white);
-    margin-bottom: 28px;
-  }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--copper);
-  }
-  .hero-sub {
-    font-size: 17px;
-    color: #aaa;
-    max-width: 580px;
-    line-height: 1.7;
-    margin-bottom: 40px;
-  }
-  .stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-  .stat-item .num {
-    font-family: var(--serif);
-    font-size: 36px;
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1;
-  }
-  .stat-item .label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 4px;
-  }
+  /* HERO */
+  .hero { max-width: 900px; margin: 0 auto; padding: 96px 32px 80px; }
+  .hero-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 20px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(38px, 6vw, 64px); font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: var(--white); margin-bottom: 28px; }
+  .hero h1 em { font-style: italic; color: var(--copper); }
+  .hero-sub { font-size: 17px; color: #aaa; max-width: 580px; line-height: 1.7; margin-bottom: 40px; }
+  .stats { display: flex; flex-wrap: wrap; gap: 40px; }
+  .stat-item .num { font-family: var(--serif); font-size: 36px; font-weight: 400; color: var(--white); line-height: 1; }
+  .stat-item .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
 
-  /* ── SECTION HEADERS ── */
-  .section-wrap {
-    border-top: 1px solid var(--border);
-    padding: 80px 32px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  .section-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 48px;
-    flex-wrap: wrap;
-  }
-  .section-meta {
-    flex: 0 0 auto;
-  }
-  .section-number {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--copper);
-    margin-bottom: 8px;
-  }
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(28px, 4vw, 44px);
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1.15;
-    margin-bottom: 8px;
-  }
-  .section-brand-tag {
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    background: var(--border);
-    color: var(--muted);
-    padding: 3px 10px;
-    border-radius: 20px;
-  }
-  .section-context {
-    flex: 1 1 340px;
-    max-width: 520px;
-    font-size: 14px;
-    color: #999;
-    line-height: 1.75;
-    padding-top: 28px;
-  }
+  /* SECTION */
+  .section-wrap { border-top: 1px solid var(--border); padding: 80px 32px; max-width: 1400px; margin: 0 auto; }
+  .section-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 40px; margin-bottom: 48px; flex-wrap: wrap; }
+  .section-meta { flex: 0 0 auto; }
+  .section-number { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 8px; }
+  .section-title { font-family: var(--serif); font-size: clamp(28px, 4vw, 44px); font-weight: 400; color: var(--white); line-height: 1.15; margin-bottom: 8px; }
+  .section-brand-tag { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; background: var(--border); color: var(--muted); padding: 3px 10px; border-radius: 20px; }
+  .section-context { flex: 1 1 340px; max-width: 520px; font-size: 14px; color: #999; line-height: 1.75; padding-top: 28px; }
   .section-context strong { color: var(--cream); }
 
-  /* ── IMAGE GRIDS ── */
-  .grid-masonry {
-    columns: 3;
-    column-gap: 16px;
-  }
+  /* MASONRY GRID */
+  .grid-masonry { columns: 3; column-gap: 16px; }
   @media (max-width: 1100px) { .grid-masonry { columns: 2; } }
   @media (max-width: 600px) { .grid-masonry { columns: 1; } }
-
-  .grid-masonry .img-item {
-    break-inside: avoid;
-    margin-bottom: 16px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    background: var(--surface);
-    cursor: pointer;
-  }
-  .grid-masonry .img-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.4s ease;
-  }
+  .grid-masonry .img-item { break-inside: avoid; margin-bottom: 16px; position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
+  .grid-masonry .img-item img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; }
   .grid-masonry .img-item:hover img { transform: scale(1.03); }
-  .img-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px 16px 14px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.75));
-    font-size: 12px;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.4;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .grid-masonry .img-item:hover .img-caption { opacity: 1; }
 
-  .grid-even {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-  }
-  .grid-even .img-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    background: var(--surface);
-    cursor: pointer;
-  }
-  .grid-even .img-item img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
+  /* EVEN GRID */
+  .grid-even { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .grid-even .img-item { position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
+  .grid-even .img-item img { width: 100%; height: 320px; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .grid-even .img-item:hover img { transform: scale(1.04); }
-  .grid-even .img-item .img-caption {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 24px 14px 14px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    font-size: 12px;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.45;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .grid-even .img-item:hover .img-caption { opacity: 1; }
 
-  /* featured (full-width) */
-  .grid-featured {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
+  /* FEATURED 2-COL */
+  .grid-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   @media (max-width: 800px) { .grid-featured { grid-template-columns: 1fr; } }
-  .grid-featured .img-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    background: var(--surface);
-  }
-  .grid-featured .img-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 600px;
-    object-fit: cover;
-  }
-  .grid-featured .img-item.wide {
-    grid-column: 1 / -1;
-  }
+  .grid-featured .img-item { position: relative; overflow: hidden; border-radius: 10px; background: var(--surface); cursor: pointer; }
+  .grid-featured .img-item img { width: 100%; height: auto; display: block; max-height: 600px; object-fit: cover; transition: transform 0.35s ease; }
+  .grid-featured .img-item:hover img { transform: scale(1.03); }
 
-  /* hook pill labels on ad cards */
-  .hook-pill {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: var(--copper);
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 20px;
-  }
+  /* CAPTIONS */
+  .img-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 28px 16px 14px; background: linear-gradient(transparent, rgba(0,0,0,0.78)); font-size: 12px; color: rgba(255,255,255,0.85); line-height: 1.45; opacity: 0; transition: opacity 0.3s; }
+  .img-item:hover .img-caption { opacity: 1; }
 
-  /* ── STRATEGY CALLOUT ── */
-  .strategy-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    margin-top: 0;
-  }
-  @media (max-width: 800px) { .strategy-card { grid-template-columns: 1fr; } }
-  .strategy-card-body {
-    padding: 48px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .strategy-card-eyebrow {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--copper);
-    margin-bottom: 16px;
-  }
-  .strategy-card-body h3 {
-    font-family: var(--serif);
-    font-size: 28px;
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
-  .strategy-card-body p {
-    font-size: 14px;
-    color: #999;
-    line-height: 1.75;
-    margin-bottom: 28px;
-  }
-  .strategy-card-body p strong { color: var(--cream); }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--copper);
-    text-decoration: none;
-    border: 1px solid var(--copper);
-    padding: 10px 20px;
-    border-radius: 6px;
-    width: fit-content;
-    transition: background 0.2s, color 0.2s;
-  }
-  .btn:hover { background: var(--copper); color: #fff; }
-  .strategy-card-preview {
-    background: #1A1A1A;
-    padding: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: 1px solid var(--border);
-  }
-  .strategy-card-preview .mini-doc {
-    background: #FAF9F5;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 320px;
-    padding: 24px 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    transform: rotate(-1deg);
-  }
-  .mini-doc .md-label {
-    font-family: monospace;
-    font-size: 8px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 8px;
-  }
-  .mini-doc .md-title {
-    font-family: Georgia, serif;
-    font-size: 14px;
-    color: #141413;
-    margin-bottom: 10px;
-    line-height: 1.3;
-  }
-  .mini-doc .md-bar {
-    height: 4px;
-    background: #D97757;
-    border-radius: 2px;
-    margin-bottom: 10px;
-  }
-  .mini-doc .md-lines { display: flex; flex-direction: column; gap: 4px; }
-  .mini-doc .md-line {
-    height: 6px;
-    background: #E0DDD5;
-    border-radius: 3px;
-  }
-  .mini-doc .md-line.short { width: 65%; }
-  .mini-doc .md-line.shorter { width: 45%; }
-  .mini-doc .md-angle {
-    margin-top: 12px;
-    background: #F0EEE6;
-    border-radius: 6px;
-    padding: 8px 10px;
-  }
-  .mini-doc .md-angle-num {
-    font-family: monospace;
-    font-size: 8px;
-    color: #D97757;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
-  .mini-doc .md-angle-title {
-    font-family: Georgia, serif;
-    font-size: 11px;
-    color: #141413;
-    line-height: 1.4;
-  }
+  /* HOOK PILL */
+  .hook-pill { position: absolute; top: 12px; left: 12px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--copper); color: #fff; padding: 3px 8px; border-radius: 20px; z-index: 2; }
 
-  /* ── APPROACH SECTION ── */
-  .approach-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    overflow: hidden;
-    margin-top: 48px;
-  }
-  .approach-item {
-    background: var(--surface);
-    padding: 32px 28px;
-  }
-  .approach-num {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--copper);
-    margin-bottom: 12px;
-  }
-  .approach-title {
-    font-family: var(--serif);
-    font-size: 17px;
-    color: var(--white);
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
-  .approach-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  /* ── HOOKS SHOWCASE ── */
-  .hooks-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-top: 32px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .hook-row {
-    display: grid;
-    grid-template-columns: 100px 1fr auto;
-    gap: 24px;
-    align-items: start;
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-    transition: background 0.2s;
-  }
+  /* HOOKS LIST */
+  .hooks-list { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 32px; }
+  .hook-row { display: grid; grid-template-columns: 110px 1fr auto; gap: 24px; align-items: start; padding: 18px 24px; border-bottom: 1px solid var(--border); background: var(--surface); transition: background 0.2s; }
   .hook-row:last-child { border-bottom: 0; }
   .hook-row:hover { background: #1e1e1e; }
-  .hook-type {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--copper);
-    padding-top: 3px;
-  }
-  .hook-text {
-    font-family: var(--serif);
-    font-size: 15px;
-    color: var(--cream);
-    line-height: 1.5;
-    font-style: italic;
-  }
-  .hook-brand {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    white-space: nowrap;
-    padding-top: 4px;
-  }
+  .hook-type { font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); padding-top: 3px; }
+  .hook-text { font-family: var(--serif); font-size: 15px; color: var(--cream); line-height: 1.5; font-style: italic; }
+  .hook-brand { font-family: var(--mono); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; padding-top: 4px; }
 
-  /* ── DIVIDER ── */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 0 32px;
-  }
+  /* APPROACH GRID */
+  .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-top: 48px; }
+  .approach-item { background: var(--surface); padding: 32px 28px; }
+  .approach-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); margin-bottom: 12px; }
+  .approach-title { font-family: var(--serif); font-size: 17px; color: var(--white); margin-bottom: 8px; line-height: 1.3; }
+  .approach-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 48px 32px;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  footer .name {
-    font-family: var(--serif);
-    font-size: 18px;
-    color: var(--white);
-  }
-  footer .cta-line {
-    font-size: 13px;
-    color: var(--muted);
-  }
-  footer .cta-line a {
-    color: var(--copper);
-    text-decoration: none;
-  }
+  /* STRATEGY CARD */
+  .strategy-card { display: grid; grid-template-columns: 1fr 1fr; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+  @media (max-width: 800px) { .strategy-card { grid-template-columns: 1fr; } }
+  .strategy-card-body { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+  .strategy-card-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--copper); margin-bottom: 16px; }
+  .strategy-card-body h3 { font-family: var(--serif); font-size: 28px; font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 16px; }
+  .strategy-card-body p { font-size: 14px; color: #999; line-height: 1.75; margin-bottom: 28px; }
+  .strategy-card-body p strong { color: var(--cream); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--copper); text-decoration: none; border: 1px solid var(--copper); padding: 10px 20px; border-radius: 6px; width: fit-content; transition: background 0.2s, color 0.2s; }
+  .btn:hover { background: var(--copper); color: #fff; }
+  .strategy-card-preview { background: #1a1a1a; padding: 32px; display: flex; align-items: center; justify-content: center; border-left: 1px solid var(--border); }
+  .mini-doc { background: #FAF9F5; border-radius: 8px; width: 100%; max-width: 300px; padding: 22px 18px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); transform: rotate(-1deg); }
+  .md-label { font-family: monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 8px; }
+  .md-title { font-family: Georgia, serif; font-size: 13px; color: #141413; margin-bottom: 10px; line-height: 1.3; }
+  .md-bar { height: 3px; background: #D97757; border-radius: 2px; margin-bottom: 10px; }
+  .md-lines { display: flex; flex-direction: column; gap: 4px; }
+  .md-line { height: 5px; background: #E0DDD5; border-radius: 3px; }
+  .md-line.short { width: 65%; }
+  .md-line.shorter { width: 45%; }
+  .md-angle { margin-top: 10px; background: #F0EEE6; border-radius: 5px; padding: 7px 9px; }
+  .md-angle-num { font-family: monospace; font-size: 8px; color: #D97757; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
+  .md-angle-title { font-family: Georgia, serif; font-size: 10px; color: #141413; line-height: 1.4; }
 
-  /* ── LIGHTBOX ── */
-  #lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.92);
-    z-index: 999;
-    align-items: center;
-    justify-content: center;
-    padding: 32px;
-  }
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 48px 32px; max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  footer .name { font-family: var(--serif); font-size: 18px; color: var(--white); }
+  footer .cta-line { font-size: 13px; color: var(--muted); }
+  footer .cta-line a { color: var(--copper); text-decoration: none; }
+
+  /* LIGHTBOX */
+  #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 999; align-items: center; justify-content: center; padding: 32px; }
   #lightbox.open { display: flex; }
-  #lightbox img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
-  }
-  #lightbox-close {
-    position: absolute;
-    top: 20px; right: 24px;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-    background: none;
-    border: none;
-    opacity: 0.7;
-    line-height: 1;
-  }
+  #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 40px 100px rgba(0,0,0,0.6); }
+  #lightbox-close { position: absolute; top: 20px; right: 24px; font-size: 28px; color: #fff; cursor: pointer; background: none; border: none; opacity: 0.7; line-height: 1; }
   #lightbox-close:hover { opacity: 1; }
 </style>
 </head>
 <body>
 
-<!-- LIGHTBOX -->
 <div id="lightbox">
   <button id="lightbox-close" onclick="closeLightbox()">&times;</button>
   <img id="lightbox-img" src="" alt="">
 </div>
 
-<!-- NAV -->
 <nav>
   <a href="#top" class="nav-brand">Muhammad Atif</a>
   <ul class="nav-links">
-    <li><a href="#heartland">Heartland Antlers</a></li>
+    <li><a href="#heartland">Heartland</a></li>
     <li><a href="#yours">YOURS Wine</a></li>
     <li><a href="#beauty">Beauty</a></li>
+    <li><a href="#approach">Method</a></li>
     <li><a href="#strategy">Strategy</a></li>
-    <li><a href="#approach">Approach</a></li>
   </ul>
 </nav>
 
@@ -590,147 +153,174 @@
   <p class="hero-eyebrow">Creative Strategist · Paid Social · Content</p>
   <h1>The creative<br>that <em>converts</em></h1>
   <p class="hero-sub">
-    I build ad creative from the audience up — starting with the trigger event that sends someone to Google at 11pm, not the product features that fill a spec sheet.
-    Below is a cross-section of campaigns across pet, beverage, and beauty verticals.
+    I build ad creative from the audience up — starting with the trigger event that sends someone searching at 11pm, not the product features that fill a spec sheet. Below is a cross-section of campaigns across pet, beverage, and beauty verticals.
   </p>
   <div class="stats">
-    <div class="stat-item">
-      <div class="num">4+</div>
-      <div class="label">Brands</div>
-    </div>
-    <div class="stat-item">
-      <div class="num">20+</div>
-      <div class="label">Live Creatives</div>
-    </div>
-    <div class="stat-item">
-      <div class="num">Meta · TikTok</div>
-      <div class="label">Primary Channels</div>
-    </div>
-    <div class="stat-item">
-      <div class="num">TOF → BOF</div>
-      <div class="label">Full Funnel</div>
-    </div>
+    <div class="stat-item"><div class="num">4+</div><div class="label">Brands</div></div>
+    <div class="stat-item"><div class="num">30+</div><div class="label">Live Creatives</div></div>
+    <div class="stat-item"><div class="num">Meta · TikTok</div><div class="label">Primary Channels</div></div>
+    <div class="stat-item"><div class="num">TOF → BOF</div><div class="label">Full Funnel</div></div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════ -->
-<!-- SECTION 1: HEARTLAND ANTLERS           -->
-<!-- ═══════════════════════════════════════ -->
+<!-- ══════════════════════════ -->
+<!-- 01 · HEARTLAND ANTLERS    -->
+<!-- ══════════════════════════ -->
 <section id="heartland" class="section-wrap">
   <div class="section-header">
     <div class="section-meta">
       <div class="section-number">01 / Campaign</div>
       <h2 class="section-title">Heartland<br>Antlers</h2>
-      <span class="section-brand-tag">Pet · D2C · Meta Ads</span>
+      <span class="section-brand-tag">Pet · D2C · Meta + Email</span>
     </div>
     <div class="section-context">
-      <p>
-        <strong>The brief:</strong> A premium elk/deer antler chew brand in a crowded pet market dominated by cheap rawhide and "natural" buzzwords.
-        Most competitors talk about ingredients. We talked about <strong>behavior</strong>.
-      </p>
-      <p>
-        Every hook was built around a trigger event — the moment a dog owner types "why does my dog chew everything" into Google.
-        The creative moved people from problem-aware to solution-aware without ever opening with the product.
-      </p>
+      <p><strong>The brief:</strong> Premium elk/deer antler chew brand in a crowded pet market dominated by cheap rawhide and vague "natural" claims. Most competitors lead with ingredients. We led with <strong>behavior</strong>.</p>
+      <p>Every hook was built around a trigger event — the moment a dog owner searches "why does my dog destroy everything" at midnight. Creative moved people from problem-aware to solution-aware without opening on the product.</p>
     </div>
   </div>
 
-  <!-- Masonry grid of ad creatives -->
   <div class="grid-masonry">
-
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Email / Landing</span>
+      <img src="images/heartland-12-can-dogs-chew.png" alt="Can Dogs Chew Antlers">
+      <div class="img-caption">Can Dogs Chew Antlers? — Full email/landing page creative. Education-first funnel entry.</div>
+    </div>
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Problem Hook</span>
       <img src="images/heartland-01-one-chew.png" alt="One chew, fewer interruptions">
-      <div class="img-caption">One chew, fewer interruptions — Functional benefit headline. Targets owners mid-workday.</div>
+      <div class="img-caption">One chew, fewer interruptions — Functional benefit. Targets owners mid-workday.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Curiosity Hook</span>
       <img src="images/heartland-02-why-dog-watches.jpg" alt="Why your dog watches your work">
       <div class="img-caption">Why your dog watches your work — Trigger-event copy. Hooks a working dog owner's identity.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Authority Hook</span>
       <img src="images/heartland-04-before-you-buy.png" alt="Before you buy an antler">
-      <div class="img-caption">Before you buy an antler — Educational angle. Pre-empts objections from first-time buyers.</div>
+      <div class="img-caption">Before you buy an antler — Educational angle. Pre-empts first-time buyer objections.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Emotional Hook</span>
+      <span class="hook-pill">Identity Hook</span>
       <img src="images/heartland-08-give-dog-job.png" alt="Give your dog a job">
       <div class="img-caption">Give your dog a job — Identity-based creative targeting working-breed owners.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
-      <span class="hook-pill">Objection</span>
+      <span class="hook-pill">Contrarian</span>
       <img src="images/heartland-06-dental-chews.png" alt="Dental chews don't clean teeth">
-      <div class="img-caption">Dental chews don't clean teeth — Contrarian hook. Creates pattern interrupt for pet owners.</div>
+      <div class="img-caption">Dental chews don't clean teeth — Pattern interrupt for pet owners in the category.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Comparison</span>
       <img src="images/heartland-09-brown-vs-white.png" alt="Brown vs white antler">
-      <div class="img-caption">Brown vs. white antler — Side-by-side education. Raises perceived expertise of the buyer.</div>
+      <div class="img-caption">Brown vs. white antler — Side-by-side education. Raises perceived buyer expertise.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Life-Stage</span>
       <img src="images/heartland-03-puppy-teeth.png" alt="Puppy teeth are no joke">
       <div class="img-caption">Puppy teeth are no joke — Life-stage targeting. New puppy owners at peak anxiety.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Ingredient</span>
       <img src="images/heartland-05-whats-in-chew.png" alt="What's in your dog's chew right now">
-      <div class="img-caption">What's in your dog's chew right now? — Ingredient skeptic angle. Mirrors Lisa-style persona.</div>
+      <div class="img-caption">What's in your dog's chew right now? — Ingredient skeptic angle. Mirrors VOC language.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
       <span class="hook-pill">Brand Story</span>
       <img src="images/heartland-07-refuse-cheap.png" alt="Why we refuse to sell cheap dog chews">
       <div class="img-caption">Why we refuse to sell cheap dog chews — Brand values creative. Builds trust through transparency.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
       <img src="images/heartland-10-marrow1.png" alt="Antler marrow product shot">
-      <div class="img-caption">Product creative — Antler marrow. Lifestyle/Pinterest format.</div>
+      <div class="img-caption">Product creative — Antler marrow. Pinterest/lifestyle format.</div>
     </div>
-
     <div class="img-item" onclick="openLightbox(this)">
       <img src="images/heartland-11-marrow2.png" alt="Antler marrow product shot 2">
-      <div class="img-caption">Product creative — Antler marrow variant. Visual A/B test.</div>
+      <div class="img-caption">Product creative — Antler marrow variant. A/B visual test.</div>
     </div>
-
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════ -->
-<!-- SECTION 2: YOURS NON-ALCOHOLIC WINE   -->
-<!-- ═══════════════════════════════════════ -->
+<!-- ══════════════════════════════ -->
+<!-- 02 · YOURS NON-ALCOHOLIC WINE -->
+<!-- ══════════════════════════════ -->
 <section id="yours" class="section-wrap">
   <div class="section-header">
     <div class="section-meta">
       <div class="section-number">02 / Campaign</div>
       <h2 class="section-title">YOURS<br>Non-Alcoholic Wine</h2>
-      <span class="section-brand-tag">Beverage · Lifestyle · Email + Social</span>
+      <span class="section-brand-tag">Beverage · Lifestyle · Meta + Email</span>
     </div>
     <div class="section-context">
-      <p>
-        <strong>The brief:</strong> A premium NA wine brand entering a category still fighting the "why bother" objection.
-        The creative challenge: make non-alcoholic wine feel like a choice you're <em>proud</em> of, not a compromise you settled for.
-      </p>
-      <p>
-        Strategy pivot: stop trying to out-wine wine. Position around the <strong>morning after</strong> — waking up sharp, remembering your conversations, keeping your plans.
-        The alcohol-free angle becomes an advantage, not an asterisk.
-      </p>
+      <p><strong>The brief:</strong> Premium NA wine brand fighting the "why bother" objection. The creative challenge: make alcohol-free wine feel like a choice you're <em>proud</em> of — not a compromise.</p>
+      <p>Strategy pivot: stop trying to out-wine wine. Position around the <strong>morning after</strong> — waking up sharp, keeping your plans, remembering your conversations. The alcohol-free angle becomes the premium, not the asterisk.</p>
     </div>
   </div>
 
-  <div class="grid-even">
+  <!-- Hero emotional ads -->
+  <div class="grid-featured" style="margin-bottom:16px">
     <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/yours-01-chardonnay-email.png" alt="YOURS Chardonnay email creative">
+      <span class="hook-pill">Emotional TOF</span>
+      <img src="images/yours-14-ritual.png" alt="Some days you just want the ritual not the regret">
+      <div class="img-caption">Some days, you just want the ritual, not the regret — Identity-first emotional hook.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Contrarian</span>
+      <img src="images/yours-09-stop-calling.png" alt="Stop calling this wine">
+      <div class="img-caption">Stop calling this wine — Dark, category-disrupting hook. Targets the skeptic persona.</div>
+    </div>
+  </div>
+
+  <!-- Full campaign grid -->
+  <div class="grid-masonry">
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Email Creative</span>
+      <img src="images/yours-07-chardonnay-email2.png" alt="Chardonnay without the morning-after">
       <div class="img-caption">Chardonnay Without The Morning-After — Full email creative. Positions freedom as the premium.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Email Creative</span>
+      <img src="images/yours-01-chardonnay-email.png" alt="YOURS Chardonnay email">
+      <div class="img-caption">Chardonnay email variant — Full email with tasting notes and CTA.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Benefit Hook</span>
+      <img src="images/yours-16-calories.png" alt="Under 20 calories same ritual">
+      <div class="img-caption">Under 20 calories. Same ritual. — Comparison creative. Health-aware audience.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Seasonal</span>
+      <img src="images/yours-15-fall-zero-proof.png" alt="Fall's wine. Zero proof.">
+      <div class="img-caption">Fall's wine. Zero proof. — Seasonal product creative. Warm lifestyle aesthetic.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Multi-pack</span>
+      <img src="images/yours-08-one-bottle.png" alt="One bottle is not enough">
+      <div class="img-caption">One bottle is not enough — Bundle/multi-pack creative. Gifting and hosting angle.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Quality Hook</span>
+      <img src="images/yours-10-no-finish.png" alt="If it has no finish it feels pointless">
+      <div class="img-caption">If it has no finish, it feels pointless — Educates on what makes great NA wine different.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Lifestyle Grid</span>
+      <img src="images/yours-11-best-part.png" alt="The best part is tomorrow">
+      <div class="img-caption">The best part is tomorrow — 4-panel lifestyle creative. Morning-after positioning.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Mood Hook</span>
+      <img src="images/yours-12-sweetness.png" alt="Sweetness first">
+      <div class="img-caption">Sweetness first — Dark, editorial creative. Disrupts cheap-wine visual language.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <span class="hook-pill">Hosting Angle</span>
+      <img src="images/yours-13-set-quietly.png" alt="Set it quietly">
+      <div class="img-caption">Set it quietly — Host persona creative. Practical, confidence-forward messaging.</div>
+    </div>
+    <div class="img-item" onclick="openLightbox(this)">
+      <img src="images/yours-17-bottle-char.png" alt="YOURS Chardonnay bottle">
+      <div class="img-caption">YOURS Chardonnay — Product shot with tasting notes.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <img src="images/yours-02-red-blend.png" alt="YOURS Red Blend">
@@ -738,11 +328,11 @@
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <img src="images/yours-03-sauv-blanc.png" alt="YOURS Sauvignon Blanc">
-      <div class="img-caption">Sauvignon Blanc — Product creative variant.</div>
+      <div class="img-caption">Sauvignon Blanc — Product variant creative.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <img src="images/yours-04-lifestyle.png" alt="YOURS lifestyle">
-      <div class="img-caption">Lifestyle creative — Social/feed format.</div>
+      <div class="img-caption">Lifestyle creative — Feed format.</div>
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <img src="images/yours-05-lifestyle2.png" alt="YOURS lifestyle 2">
@@ -750,30 +340,24 @@
     </div>
     <div class="img-item" onclick="openLightbox(this)">
       <img src="images/yours-06-rich-reds.png" alt="Rich reds crisp whites">
-      <div class="img-caption">Rich reds, crisp whites — Announcement/seasonal creative.</div>
+      <div class="img-caption">Rich reds, crisp whites — Range announcement creative.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════ -->
-<!-- SECTION 3: BEAUTY & SKINCARE          -->
-<!-- ═══════════════════════════════════════ -->
+<!-- ══════════════════════════ -->
+<!-- 03 · BEAUTY               -->
+<!-- ══════════════════════════ -->
 <section id="beauty" class="section-wrap">
   <div class="section-header">
     <div class="section-meta">
       <div class="section-number">03 / Campaign</div>
-      <h2 class="section-title">Beauty &amp;<br>Skincare</h2>
-      <span class="section-brand-tag">GLY Miracle · Restora · Kisa</span>
+      <h2 class="section-title">GLY Miracle<br>Beauty</h2>
+      <span class="section-brand-tag">Skincare · Premium · Visual Identity</span>
     </div>
     <div class="section-context">
-      <p>
-        <strong>The brief:</strong> Multiple beauty and skincare brands needing creative that doesn't look like everyone else's.
-        The category is saturated with before/afters and dermatologist authority hooks — both lanes are overcrowded.
-      </p>
-      <p>
-        Approach: find the <strong>white space</strong>. GLY Miracle creative focuses on the bold, confident woman who already knows her skin — not the anxious shopper looking for a fix.
-        Restora and Kisa lean into lifestyle identity over ingredient lists.
-      </p>
+      <p><strong>The brief:</strong> A premium skincare brand that needed creative to stand apart from the before/after and dermatologist authority lanes — both overcrowded.</p>
+      <p>Approach: GLY Miracle creative focuses on the <strong>bold, confident woman who already knows her skin</strong> — not the anxious shopper looking for a fix. Premium visual identity over ingredient anxiety.</p>
     </div>
   </div>
 
@@ -787,20 +371,12 @@
       <img src="images/beauty-01-gly-miracle-main.png" alt="GLY Miracle main image">
       <div class="img-caption">GLY Miracle — Main product image. Premium lifestyle aesthetic.</div>
     </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/beauty-03-restora.png" alt="Restora">
-      <div class="img-caption">Restora — Product/lifestyle creative. Clean, editorial aesthetic.</div>
-    </div>
-    <div class="img-item" onclick="openLightbox(this)">
-      <img src="images/kisa-01-black-cat-candle.jpg" alt="Kisa black cat candle">
-      <div class="img-caption">Kisa by Pyropet — Lifestyle brand creative. Dark aesthetic, mood-forward approach.</div>
-    </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════ -->
-<!-- SECTION 4: WINNING HOOKS              -->
-<!-- ═══════════════════════════════════════ -->
+<!-- ══════════════════════════ -->
+<!-- 04 · METHOD               -->
+<!-- ══════════════════════════ -->
 <section id="approach" class="section-wrap">
   <div class="section-header">
     <div class="section-meta">
@@ -808,9 +384,7 @@
       <h2 class="section-title">Hooks that<br>stop the scroll</h2>
     </div>
     <div class="section-context">
-      <p>
-        Every winning creative starts with the right first line. Here's a selection of hooks across brands and funnel stages — organized by hook type.
-      </p>
+      <p>Every winning creative starts with the right first line. Here's a selection of hooks across brands and funnel stages — organized by hook type.</p>
     </div>
   </div>
 
@@ -833,12 +407,27 @@
     <div class="hook-row">
       <div class="hook-type">Benefit Flip</div>
       <div class="hook-text">"Chardonnay without the morning-after."</div>
-      <div class="hook-brand">YOURS Wine</div>
+      <div class="hook-brand">YOURS</div>
     </div>
     <div class="hook-row">
-      <div class="hook-type">Social Proof</div>
-      <div class="hook-text">"Your vet said no antlers. Here's what they probably saw."</div>
-      <div class="hook-brand">Heartland</div>
+      <div class="hook-type">Emotional</div>
+      <div class="hook-text">"Some days, you just want the ritual, not the regret."</div>
+      <div class="hook-brand">YOURS</div>
+    </div>
+    <div class="hook-row">
+      <div class="hook-type">Contrarian</div>
+      <div class="hook-text">"Stop calling this wine."</div>
+      <div class="hook-brand">YOURS</div>
+    </div>
+    <div class="hook-row">
+      <div class="hook-type">Quality Hook</div>
+      <div class="hook-text">"If it has no finish, it feels pointless."</div>
+      <div class="hook-brand">YOURS</div>
+    </div>
+    <div class="hook-row">
+      <div class="hook-type">Benefit Hook</div>
+      <div class="hook-text">"Under 20 calories. Same ritual."</div>
+      <div class="hook-brand">YOURS</div>
     </div>
     <div class="hook-row">
       <div class="hook-type">Comparison</div>
@@ -850,45 +439,35 @@
       <div class="hook-text">"Puppy teeth are no joke. Neither is everything they destroy."</div>
       <div class="hook-brand">Heartland</div>
     </div>
-    <div class="hook-row">
-      <div class="hook-type">Ingredient Skeptic</div>
-      <div class="hook-text">"What's in your dog's chew right now? (Most people don't know.)"</div>
-      <div class="hook-brand">Heartland</div>
-    </div>
-    <div class="hook-row">
-      <div class="hook-type">Emotion First</div>
-      <div class="hook-text">"Rich reds, crisp whites — and the kind of pour that lets you keep your plans tomorrow."</div>
-      <div class="hook-brand">YOURS Wine</div>
-    </div>
   </div>
 
   <div class="approach-grid">
     <div class="approach-item">
       <div class="approach-num">Step 01</div>
       <div class="approach-title">Saturation Scan</div>
-      <div class="approach-desc">Pull active competitor ads from Meta Ad Library. Identify the lane 80% of competitors are crowding — then stay out of it.</div>
+      <div class="approach-desc">Pull active competitor ads from Meta Ad Library. Find the lane 80% of competitors are crowding — then stay out of it.</div>
     </div>
     <div class="approach-item">
       <div class="approach-num">Step 02</div>
       <div class="approach-title">Trigger Mapping</div>
-      <div class="approach-desc">List the moments that make someone search your category at 11pm. Almost never "I want a product." Almost always a life event, a photo, a frustration.</div>
+      <div class="approach-desc">List the moments that make someone search your category at 11pm. Almost never "I want a product." Always a life event, a photo, a frustration.</div>
     </div>
     <div class="approach-item">
       <div class="approach-num">Step 03</div>
       <div class="approach-title">White Space Test</div>
-      <div class="approach-desc">For every angle candidate: would a media buyer at your top competitor recognize this angle? If yes, kill it. If no, brief it.</div>
+      <div class="approach-desc">For every angle: would a media buyer at your top competitor recognize this? If yes — kill it. If no — brief it.</div>
     </div>
     <div class="approach-item">
       <div class="approach-num">Step 04</div>
       <div class="approach-title">Hook Variants</div>
-      <div class="approach-desc">Every concept ships with 3 hook variants — problem, curiosity, and identity. The algorithm picks the winner. We pick the direction.</div>
+      <div class="approach-desc">Every concept ships with 3 hook variants — problem, curiosity, identity. The algorithm picks the winner. I pick the direction.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════ -->
-<!-- SECTION 5: STRATEGY SAMPLE           -->
-<!-- ═══════════════════════════════════════ -->
+<!-- ══════════════════════════ -->
+<!-- 05 · STRATEGY SAMPLE      -->
+<!-- ══════════════════════════ -->
 <section id="strategy" class="section-wrap">
   <div class="section-header">
     <div class="section-meta">
@@ -896,10 +475,7 @@
       <h2 class="section-title">Creative Strategy<br>in the Wild</h2>
     </div>
     <div class="section-context">
-      <p>
-        This is what a pre-brief strategy document looks like before a single hook is written.
-        Built specifically for <strong>Skynflow</strong> — audience scan, competitor white space, three angles, and one full production-ready brief.
-      </p>
+      <p>This is what a pre-brief strategy document looks like before a single hook is written — audience scan, competitor white space, three angles, one full production-ready brief.</p>
     </div>
   </div>
 
@@ -907,13 +483,8 @@
     <div class="strategy-card-body">
       <div class="strategy-card-eyebrow">Skynflow · Sample Strategy Doc</div>
       <h3>"I don't want to look younger. I want to look like myself."</h3>
-      <p>
-        Three white-space angles for a 40+ skin brand — built from a competitor saturation scan, trigger event mapping, and audience language research.
-        Includes <strong>Angle 01–03</strong> with hook variants and a full production brief for Angle 02, Concept 01.
-      </p>
-      <a href="skynflow-strategy.html" target="_blank" class="btn">
-        View Strategy Doc →
-      </a>
+      <p>Three white-space angles for a 40+ skin brand — built from a competitor saturation scan, trigger event mapping, and audience language research. Includes <strong>Angles 01–03</strong> with hook variants and a full production brief for Angle 02, Concept 01.</p>
+      <a href="skynflow-strategy.html" target="_blank" class="btn">View Strategy Doc →</a>
     </div>
     <div class="strategy-card-preview">
       <div class="mini-doc">
@@ -921,10 +492,8 @@
         <div class="md-title">Three angles + one full brief</div>
         <div class="md-bar"></div>
         <div class="md-lines">
-          <div class="md-line"></div>
-          <div class="md-line short"></div>
-          <div class="md-line"></div>
-          <div class="md-line shorter"></div>
+          <div class="md-line"></div><div class="md-line short"></div>
+          <div class="md-line"></div><div class="md-line shorter"></div>
         </div>
         <div class="md-angle">
           <div class="md-angle-num">Angle 01</div>
@@ -943,7 +512,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div>
     <div class="name">Muhammad Atif</div>
@@ -956,8 +524,7 @@
 
 <script>
   function openLightbox(el) {
-    const img = el.querySelector('img');
-    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').src = el.querySelector('img').src;
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -965,12 +532,8 @@
     document.getElementById('lightbox').classList.remove('open');
     document.body.style.overflow = '';
   }
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-    if (e.target === this) closeLightbox();
-  });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeLightbox();
-  });
+  document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
